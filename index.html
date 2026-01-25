@@ -16,8 +16,6 @@
       href="https://fonts.googleapis.com/css?family=Poppins&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="owl/owl.carousel.min.css" />
-    <link rel="stylesheet" href="owl/owl.theme.default.min.css" />
     <title>CONFECCIONES DE INTERIORES ELIZABETH MENDEZ</title>
     <!-- Jquery-->
     <script
@@ -29,7 +27,6 @@
     
     <!-- Mis Scripts-->
     <script src="./js/mis_script.js"></script>
-    <script src="owl/owl.carousel.min.js"></script>
     <!-- Fin mis Scripts-->
   </head>
   <body>
@@ -209,43 +206,81 @@
       <section id="mis-trabajos">
         <div class="contenedor">
           <h3>Mis Trabajos</h3>
-          <div class="owl-carousel owl-theme">
-            <div class="item">
-              <a href="www.google.com">
-                <img src="./Imagenes/sassy.jpg" alt="Sassy" />
-                <p>Sassy Kids</p>
-              </a>
-            </div>
-            <div class="item">
-              <a href="www.google.com">
-                <img src="./Imagenes/sassy.jpg" alt="Sassy" />
-                <p>Sassy Kids</p>
-              </a>
-            </div>
-            <div class="item">
-              <a href="www.google.com">
-                <img src="./Imagenes/sassy.jpg" alt="Sassy" />
-                <p>Sassy Kids</p>
-              </a>
-            </div>
-            <div class="item">
-              <a href="www.google.com">
-                <img src="./Imagenes/sassy.jpg" alt="Sassy" />
-                <p>Sassy Kids</p>
-              </a>
-            </div>
-            <div class="item">
-              <a href="www.google.com">
-                <img src="./Imagenes/sassy.jpg" alt="Sassy" />
-                <p>Sassy Kids</p>
-              </a>
-            </div>
-            <div class="item">
-              <a href="www.google.com">
-                <img src="./Imagenes/sassy.jpg" alt="Sassy" />
-                <p>Sassy Kids</p>
-              </a>
-            </div>
+          <div class="trabajos-filtros">
+            <button class="trabajo-filtro is-active" data-filter="todos">
+              Todos
+            </button>
+            <button class="trabajo-filtro" data-filter="cortinas">
+              Cortinas
+            </button>
+            <button class="trabajo-filtro" data-filter="cojines">
+              Cojines
+            </button>
+            <button class="trabajo-filtro" data-filter="banos">Baños</button>
+          </div>
+          <div class="trabajos-grid">
+            <article class="trabajo-card" data-category="cortinas">
+              <img src="./Imagenes/confeccion.jpg" alt="Cortinas modernas" />
+              <div class="trabajo-overlay">
+                <h4>Cortinas modernas</h4>
+                <p>
+                  Telas livianas con caída suave y acabados a medida para sala.
+                </p>
+                <a href="#" class="trabajo-overlay-link">Ver detalle</a>
+              </div>
+            </article>
+            <article class="trabajo-card" data-category="cortinas">
+              <img
+                src="./Imagenes/cortina-icono.png"
+                alt="Cortinas personalizadas"
+              />
+              <div class="trabajo-overlay">
+                <h4>Cortinas personalizadas</h4>
+                <p>
+                  Diseños en capas con combinación de texturas y colores
+                  cálidos.
+                </p>
+                <a href="#" class="trabajo-overlay-link">Ver detalle</a>
+              </div>
+            </article>
+            <article class="trabajo-card" data-category="cojines">
+              <img src="./Imagenes/Cojin.jpg" alt="Cojines decorativos" />
+              <div class="trabajo-overlay">
+                <h4>Cojines decorativos</h4>
+                <p>
+                  Set de cojines con costuras reforzadas y relleno extra suave.
+                </p>
+                <a href="#" class="trabajo-overlay-link">Ver detalle</a>
+              </div>
+            </article>
+            <article class="trabajo-card" data-category="cojines">
+              <img src="./Imagenes/sassy.jpg" alt="Cojines infantiles" />
+              <div class="trabajo-overlay">
+                <h4>Cojines infantiles</h4>
+                <p>Combinaciones alegres para habitaciones con estilo juvenil.</p>
+                <a href="#" class="trabajo-overlay-link">Ver detalle</a>
+              </div>
+            </article>
+            <article class="trabajo-card" data-category="banos">
+              <img src="./Imagenes/JuegoBaño.png" alt="Juego de baño" />
+              <div class="trabajo-overlay">
+                <h4>Juego de baño</h4>
+                <p>
+                  Cortinas y accesorios coordinados con bordados delicados.
+                </p>
+                <a href="#" class="trabajo-overlay-link">Ver detalle</a>
+              </div>
+            </article>
+            <article class="trabajo-card" data-category="banos">
+              <img src="./Imagenes/mante.png" alt="Accesorios de baño" />
+              <div class="trabajo-overlay">
+                <h4>Accesorios de baño</h4>
+                <p>
+                  Toallas y alfombrillas con acabados resistentes a la humedad.
+                </p>
+                <a href="#" class="trabajo-overlay-link">Ver detalle</a>
+              </div>
+            </article>
           </div>
         </div>
       </section>

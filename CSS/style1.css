@@ -167,18 +167,98 @@ h3 {
 
 /* SECCION MIS TRABAJOS */
 
-button.owl-prev,
-button.owl-next {
-	font-size: 40px !important;
+.trabajos-filtros {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 12px;
+	margin: 30px 0 40px;
+}
+
+.trabajo-filtro {
+	background: #fff;
+	border: 1px solid #5cb8ff;
+	color: #5cb8ff;
+	padding: 10px 20px;
+	border-radius: 999px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: all 300ms;
+}
+
+.trabajo-filtro:hover,
+.trabajo-filtro.is-active {
+	background: #5cb8ff;
+	color: #fff;
+}
+
+.trabajos-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	gap: 24px;
+}
+
+.trabajo-card {
+	position: relative;
+	overflow: hidden;
+	border-radius: 16px;
+	min-height: 240px;
+	box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+.trabajo-card img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+
+.trabajo-overlay {
+	position: absolute;
+	inset: 0;
+	background: rgba(20, 20, 20, 0.62);
+	color: #fff;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	padding: 22px;
+	opacity: 0;
+	transition: opacity 300ms;
+}
+
+.trabajo-card:hover .trabajo-overlay,
+.trabajo-card:focus-within .trabajo-overlay {
+	opacity: 1;
+}
+
+.trabajo-overlay h4 {
+	margin: 0 0 8px;
+	font-size: 20px;
+}
+
+.trabajo-overlay p {
+	margin: 0 0 12px;
+	font-size: 14px;
+	line-height: 1.4;
+}
+
+.trabajo-overlay-link {
+	align-self: flex-start;
+	border: 1px solid #fff;
+	color: #fff;
+	padding: 6px 14px;
+	border-radius: 20px;
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+.trabajo-card.is-hidden {
+	display: none;
 }
 
 span {
 	color: #71bcfa;
-}
-
-#mis-trabajos p {
-	text-align: center;
-	color: #000;
 }
 
 /* SECCION POR QUE TRABAJAR CONMIGO */
