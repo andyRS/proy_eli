@@ -46,7 +46,7 @@
           ></button>
           <nav id="menu-principal">
             <ul>
-              <li><a href="index.html">Inicio</a></li>
+              <li><a href="index.php">Inicio</a></li>
               <li><a href="#">Nuestros Servicios</a></li>
               <li><a href="#">Articulos</a></li>
               <li><a href="#">Quienes Somos</a></li>
