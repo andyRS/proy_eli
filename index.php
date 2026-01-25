@@ -8,7 +8,44 @@
       name="description"
       content="Confecciones de interiores para tu hogar, únicos & con amor para hechos para ti"
     />
+    <meta
+      property="og:title"
+      content="Confecciones de Interiores Elizabeth Mendez"
+    />
+    <meta
+      property="og:description"
+      content="Confecciones de interiores para tu hogar, únicos & con amor para hechos para ti"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="./Imagenes/Costura.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Confecciones de Interiores Elizabeth Mendez"
+    />
+    <meta
+      name="twitter:description"
+      content="Confecciones de interiores para tu hogar, únicos & con amor para hechos para ti"
+    />
+    <meta name="twitter:image" content="./Imagenes/Costura.jpg" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" href="./Imagenes/206918.png" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Confecciones de Interiores Elizabeth Mendez",
+        "telephone": "+1-849-215-1118",
+        "email": "elizabethmendezp18@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressRegion": "República Dominicana",
+          "addressCountry": "DO"
+        },
+        "openingHours": "Mo-Sa 08:00-18:00",
+        "sameAs": ["https://wa.me/18492151118"]
+      }
+    </script>
     <!-- Fin Etiquetas Meta-->
     <!-- Estilos-->
     <link rel="stylesheet" href="./CSS/style1.css" />
