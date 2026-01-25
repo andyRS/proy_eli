@@ -12,6 +12,48 @@ $(document).ready(function () {
 
   menuLinks.hover(UnderlineHover, NotUnderlineHover);
 
+  $(".portafolio-carousel").owlCarousel({
+    loop: true,
+    margin: 24,
+    nav: true,
+    dots: true,
+    autoplay: true,
+    autoplayTimeout: 4500,
+    autoplayHoverPause: true,
+    responsive: {
+      0: {
+        items: 1,
+      },
+      680: {
+        items: 2,
+      },
+      1024: {
+        items: 3,
+      },
+    },
+  });
+
+  $(".testimonios-carousel").owlCarousel({
+    loop: true,
+    margin: 24,
+    nav: false,
+    dots: true,
+    autoplay: true,
+    autoplayTimeout: 5000,
+    autoplayHoverPause: true,
+    responsive: {
+      0: {
+        items: 1,
+      },
+      860: {
+        items: 2,
+      },
+      1140: {
+        items: 3,
+      },
+    },
+  });
+
   $(window).scroll(function () {
     scroll = $(window).scrollTop();
     if (scroll > 685) {
