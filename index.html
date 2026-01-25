@@ -42,12 +42,12 @@
           <p class="logo">CONFECCIONES DE INTERIORES ELIZABETH MENDEZ</p>
           <nav>
             <ul>
-              <li><a href="index.html">Inicio</a></li>
-              <li><a href="#">Nuestros Servicios</a></li>
-              <li><a href="#">Articulos</a></li>
-              <li><a href="#">Quienes Somos</a></li>
-              <li><a href="#">Cotizaciones</a></li>
-              <li><a href="#">Contactar con nostros</a></li>
+              <li><a href="#header">Inicio</a></li>
+              <li><a href="#servicios">Servicios</a></li>
+              <li><a href="#mis-trabajos">Mis trabajos</a></li>
+              <li><a href="#sobre-mi">Sobre mí</a></li>
+              <li><a href="#por-que-trabajar">¿Por qué trabajar?</a></li>
+              <li><a href="#contacto">Contacto</a></li>
             </ul>
           </nav>
         </div>
