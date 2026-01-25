@@ -16,8 +16,6 @@
       href="https://fonts.googleapis.com/css?family=Poppins&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="owl/owl.carousel.min.css" />
-    <link rel="stylesheet" href="owl/owl.theme.default.min.css" />
     <title>CONFECCIONES DE INTERIORES ELIZABETH MENDEZ</title>
     <!-- Jquery-->
     <script
@@ -29,7 +27,6 @@
     
     <!-- Mis Scripts-->
     <script src="./js/mis_script.js"></script>
-    <script src="owl/owl.carousel.min.js"></script>
     <!-- Fin mis Scripts-->
   </head>
   <body>

@@ -49,21 +49,20 @@ $(document).ready(function () {
     menuNav.slideToggle();
   });
 
-  $(".owl-carousel").owlCarousel({
-    loop: true,
-    margin: 10,
-    nav: true,
-    dots: false,
-    responsive: {
-      0: {
-        items: 1,
-      },
-      600: {
-        items: 3,
-      },
-      1000: {
-        items: 4,
-      },
-    },
+  $(".trabajo-filtro").on("click", function () {
+    var filtro = $(this).data("filter");
+
+    $(".trabajo-filtro").removeClass("is-active");
+    $(this).addClass("is-active");
+
+    if (filtro === "todos") {
+      $(".trabajo-card").removeClass("is-hidden");
+      return;
+    }
+
+    $(".trabajo-card").each(function () {
+      var categoria = $(this).data("category");
+      $(this).toggleClass("is-hidden", categoria !== filtro);
+    });
   });
 });
