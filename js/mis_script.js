@@ -12,6 +12,48 @@ $(document).ready(function () {
 
   menuLinks.hover(UnderlineHover, NotUnderlineHover);
 
+  $(".portafolio-carousel").owlCarousel({
+    loop: true,
+    margin: 24,
+    nav: true,
+    dots: true,
+    autoplay: true,
+    autoplayTimeout: 4500,
+    autoplayHoverPause: true,
+    responsive: {
+      0: {
+        items: 1,
+      },
+      680: {
+        items: 2,
+      },
+      1024: {
+        items: 3,
+      },
+    },
+  });
+
+  $(".testimonios-carousel").owlCarousel({
+    loop: true,
+    margin: 24,
+    nav: false,
+    dots: true,
+    autoplay: true,
+    autoplayTimeout: 5000,
+    autoplayHoverPause: true,
+    responsive: {
+      0: {
+        items: 1,
+      },
+      860: {
+        items: 2,
+      },
+      1140: {
+        items: 3,
+      },
+    },
+  });
+
   $(window).scroll(function () {
     scroll = $(window).scrollTop();
     if (scroll > 685) {
@@ -67,24 +109,24 @@ $(document).ready(function () {
     });
   });
 
-  $(".owl-carousel").owlCarousel({
-    loop: true,
+  $(".testimonios-carousel").owlCarousel({
+    items: 1,
     margin: 24,
-    nav: true,
-    dots: true,
     autoplay: true,
-    autoplayTimeout: 5000,
+    loop: true,
     autoplayHoverPause: true,
+    dots: true,
+    nav: false,
     responsive: {
       0: {
-        items: 1,
+        items: 1
       },
-      640: {
-        items: 2,
+      768: {
+        items: 2
       },
       1024: {
-        items: 3,
-      },
-    },
+        items: 3
+      }
+    }
   });
 });
