@@ -276,6 +276,7 @@ h3 {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 24px;
   margin-top: 40px;
+  align-items: stretch;
 }
 
 .servicio {
@@ -290,18 +291,29 @@ h3 {
   flex-direction: column;
   gap: 16px;
   min-height: 280px;
-  transition: transform 220ms ease, box-shadow 220ms ease;
+  transition: transform 200ms ease, box-shadow 200ms ease;
 }
 
 .servicio:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 18px 32px rgba(48, 39, 30, 0.12);
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(48, 39, 30, 0.12);
 }
 
 .servicio-header {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 16px;
+}
+
+.servicio-icono {
+  width: 64px;
+  height: 64px;
+  border-radius: 18px;
+  background: var(--cream);
+  border: 1px solid var(--sand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .servicio h4 {
@@ -310,19 +322,23 @@ h3 {
 }
 
 .servicio-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.servicio p {
   margin: 0;
   color: #5b5147;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .icono {
-  width: 56px;
-  height: 56px;
-  border-radius: 16px;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
   object-fit: cover;
-  background: var(--cream);
-  padding: 8px;
-  border: 1px solid rgba(200, 165, 107, 0.35);
 }
 
 .ondas {
@@ -450,6 +466,21 @@ h3 {
   max-width: 720px;
   color: #5b5147;
   line-height: 1.8;
+}
+
+.testimonios-carousel .item {
+  padding: 12px 16px 18px;
+  display: flex;
+  justify-content: center;
+}
+
+.testimonios-carousel .owl-stage-outer {
+  padding: 8px 0 20px;
+}
+
+.testimonios-carousel .testimonio-card {
+  width: 100%;
+  max-width: 360px;
 }
 
 .testimonio-card {
