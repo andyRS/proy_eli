@@ -67,11 +67,17 @@
           <h3>Sobre mi</h3>
           <div class="contenedor-sobremi">
             <div class="confecciones">
-              <img
-                src="./Imagenes/Costura.jpg"
-                alt="Costura "
-                style="border-radius: 10px"
-              />
+              <picture>
+                <source srcset="./Imagenes/Costura.avif" type="image/avif" />
+                <source srcset="./Imagenes/Costura.webp" type="image/webp" />
+                <img
+                  src="./Imagenes/Costura.jpg"
+                  alt="Costura "
+                  style="border-radius: 10px"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </div>
             <div class="texto">
               <p>
@@ -110,13 +116,35 @@
                 Confecciones Elizabeth. Para ver mas acerca de nuestras cortinas
                 contacta con nosotros.
               </p>
-              <img
-                class="icono"
-                src="./Imagenes/cortina-icono.png"
-                alt="icono-costura"
-                style="border-radius: 10px"
-              />
-              <img class="ondas" src="./Imagenes/waves.png" alt="waves" />
+              <picture>
+                <source
+                  srcset="./Imagenes/cortina-icono.avif"
+                  type="image/avif"
+                />
+                <source
+                  srcset="./Imagenes/cortina-icono.webp"
+                  type="image/webp"
+                />
+                <img
+                  class="icono"
+                  src="./Imagenes/cortina-icono.png"
+                  alt="icono-costura"
+                  style="border-radius: 10px"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+              <picture>
+                <source srcset="./Imagenes/waves.avif" type="image/avif" />
+                <source srcset="./Imagenes/waves.webp" type="image/webp" />
+                <img
+                  class="ondas"
+                  src="./Imagenes/waves.png"
+                  alt="waves"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </div>
 
             <div class="servicio celeste">
@@ -128,13 +156,29 @@
                 variedades que solo encotraras en Confecciones Elizabeth. Para
                 ver mas acerca de nuestras cortinas contacta con nosotros.
               </p>
-              <img
-                class="icono"
-                src="./Imagenes/JuegoBaño.png"
-                alt="juego baÑ"
-                style="border-radius: 35px"
-              />
-              <img class="ondas" src="./Imagenes/waves.png" alt="waves" />
+              <picture>
+                <source srcset="./Imagenes/JuegoBaño.avif" type="image/avif" />
+                <source srcset="./Imagenes/JuegoBaño.webp" type="image/webp" />
+                <img
+                  class="icono"
+                  src="./Imagenes/JuegoBaño.png"
+                  alt="juego baÑ"
+                  style="border-radius: 35px"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+              <picture>
+                <source srcset="./Imagenes/waves.avif" type="image/avif" />
+                <source srcset="./Imagenes/waves.webp" type="image/webp" />
+                <img
+                  class="ondas"
+                  src="./Imagenes/waves.png"
+                  alt="waves"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </div>
 
             <div class="servicio rosacoral">
@@ -146,13 +190,29 @@
                 Confecciones Elizabeth. Para ver mas acerca de nuestras cortinas
                 contacta con nosotros.
               </p>
-              <img
-                class="icono"
-                src="./Imagenes/Cojin.jpg"
-                alt="cojin"
-                style="border-radius: 35px"
-              />
-              <img class="ondas" src="./Imagenes/waves.png" alt="waves" />
+              <picture>
+                <source srcset="./Imagenes/Cojin.avif" type="image/avif" />
+                <source srcset="./Imagenes/Cojin.webp" type="image/webp" />
+                <img
+                  class="icono"
+                  src="./Imagenes/Cojin.jpg"
+                  alt="cojin"
+                  style="border-radius: 35px"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+              <picture>
+                <source srcset="./Imagenes/waves.avif" type="image/avif" />
+                <source srcset="./Imagenes/waves.webp" type="image/webp" />
+                <img
+                  class="ondas"
+                  src="./Imagenes/waves.png"
+                  alt="waves"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </div>
 
             <div class="servicio rosaclaro">
@@ -164,13 +224,35 @@
                 Confecciones Elizabeth. Para ver mas acerca de nuestras cortinas
                 contacta con nosotros.
               </p>
-              <img
-                class="icono"
-                src="./Imagenes/SABANA-180-HILOS.jpg"
-                alt="icono-costura"
-                style="border-radius: 25px"
-              />
-              <img class="ondas" src="./Imagenes/waves.png" alt="waves" />
+              <picture>
+                <source
+                  srcset="./Imagenes/SABANA-180-HILOS.avif"
+                  type="image/avif"
+                />
+                <source
+                  srcset="./Imagenes/SABANA-180-HILOS.webp"
+                  type="image/webp"
+                />
+                <img
+                  class="icono"
+                  src="./Imagenes/SABANA-180-HILOS.jpg"
+                  alt="icono-costura"
+                  style="border-radius: 25px"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+              <picture>
+                <source srcset="./Imagenes/waves.avif" type="image/avif" />
+                <source srcset="./Imagenes/waves.webp" type="image/webp" />
+                <img
+                  class="ondas"
+                  src="./Imagenes/waves.png"
+                  alt="waves"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </div>
 
             <div class="servicio violeta">
@@ -182,12 +264,34 @@
                 Confecciones Elizabeth. Para ver mas acerca de nuestras cortinas
                 contacta con nosotros.
               </p>
-              <img
-                class="icono"
-                src="./Imagenes/cortina-icono.png"
-                alt="icono-costura"
-              />
-              <img class="ondas" src="./Imagenes/waves.png" alt="waves" />
+              <picture>
+                <source
+                  srcset="./Imagenes/cortina-icono.avif"
+                  type="image/avif"
+                />
+                <source
+                  srcset="./Imagenes/cortina-icono.webp"
+                  type="image/webp"
+                />
+                <img
+                  class="icono"
+                  src="./Imagenes/cortina-icono.png"
+                  alt="icono-costura"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+              <picture>
+                <source srcset="./Imagenes/waves.avif" type="image/avif" />
+                <source srcset="./Imagenes/waves.webp" type="image/webp" />
+                <img
+                  class="ondas"
+                  src="./Imagenes/waves.png"
+                  alt="waves"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </div>
 
             <div class="servicio celeste">
@@ -199,8 +303,28 @@
                 Confecciones Elizabeth. Para ver mas acerca de nuestras cortinas
                 contacta con nosotros.
               </p>
-              <img class="icono" src="./Imagenes/mante.png" alt="mante" />
-              <img class="ondas" src="./Imagenes/waves.png" alt="waves" />
+              <picture>
+                <source srcset="./Imagenes/mante.avif" type="image/avif" />
+                <source srcset="./Imagenes/mante.webp" type="image/webp" />
+                <img
+                  class="icono"
+                  src="./Imagenes/mante.png"
+                  alt="mante"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+              <picture>
+                <source srcset="./Imagenes/waves.avif" type="image/avif" />
+                <source srcset="./Imagenes/waves.webp" type="image/webp" />
+                <img
+                  class="ondas"
+                  src="./Imagenes/waves.png"
+                  alt="waves"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </div>
           </div>
         </div>
@@ -212,37 +336,91 @@
           <div class="owl-carousel owl-theme">
             <div class="item">
               <a href="www.google.com">
-                <img src="./Imagenes/sassy.jpg" alt="Sassy" />
+                <picture>
+                  <source srcset="./Imagenes/sassy.avif" type="image/avif" />
+                  <source srcset="./Imagenes/sassy.webp" type="image/webp" />
+                  <img
+                    src="./Imagenes/sassy.jpg"
+                    alt="Sassy"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
                 <p>Sassy Kids</p>
               </a>
             </div>
             <div class="item">
               <a href="www.google.com">
-                <img src="./Imagenes/sassy.jpg" alt="Sassy" />
+                <picture>
+                  <source srcset="./Imagenes/sassy.avif" type="image/avif" />
+                  <source srcset="./Imagenes/sassy.webp" type="image/webp" />
+                  <img
+                    src="./Imagenes/sassy.jpg"
+                    alt="Sassy"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
                 <p>Sassy Kids</p>
               </a>
             </div>
             <div class="item">
               <a href="www.google.com">
-                <img src="./Imagenes/sassy.jpg" alt="Sassy" />
+                <picture>
+                  <source srcset="./Imagenes/sassy.avif" type="image/avif" />
+                  <source srcset="./Imagenes/sassy.webp" type="image/webp" />
+                  <img
+                    src="./Imagenes/sassy.jpg"
+                    alt="Sassy"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
                 <p>Sassy Kids</p>
               </a>
             </div>
             <div class="item">
               <a href="www.google.com">
-                <img src="./Imagenes/sassy.jpg" alt="Sassy" />
+                <picture>
+                  <source srcset="./Imagenes/sassy.avif" type="image/avif" />
+                  <source srcset="./Imagenes/sassy.webp" type="image/webp" />
+                  <img
+                    src="./Imagenes/sassy.jpg"
+                    alt="Sassy"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
                 <p>Sassy Kids</p>
               </a>
             </div>
             <div class="item">
               <a href="www.google.com">
-                <img src="./Imagenes/sassy.jpg" alt="Sassy" />
+                <picture>
+                  <source srcset="./Imagenes/sassy.avif" type="image/avif" />
+                  <source srcset="./Imagenes/sassy.webp" type="image/webp" />
+                  <img
+                    src="./Imagenes/sassy.jpg"
+                    alt="Sassy"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
                 <p>Sassy Kids</p>
               </a>
             </div>
             <div class="item">
               <a href="www.google.com">
-                <img src="./Imagenes/sassy.jpg" alt="Sassy" />
+                <picture>
+                  <source srcset="./Imagenes/sassy.avif" type="image/avif" />
+                  <source srcset="./Imagenes/sassy.webp" type="image/webp" />
+                  <img
+                    src="./Imagenes/sassy.jpg"
+                    alt="Sassy"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
                 <p>Sassy Kids</p>
               </a>
             </div>
@@ -257,7 +435,22 @@
             <div class="item">
               <ul>
                 <li>
-                  <img src="./Imagenes/velocidad.png" alt="velocidad" />
+                  <picture>
+                    <source
+                      srcset="./Imagenes/velocidad.avif"
+                      type="image/avif"
+                    />
+                    <source
+                      srcset="./Imagenes/velocidad.webp"
+                      type="image/webp"
+                    />
+                    <img
+                      src="./Imagenes/velocidad.png"
+                      alt="velocidad"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </picture>
                 </li>
                 <li>Velocidad</li>
                 <li>
@@ -271,7 +464,22 @@
             <div class="item">
               <ul>
                 <li>
-                  <img src="./Imagenes/mantenimiento.png" alt="mantenimiento" />
+                  <picture>
+                    <source
+                      srcset="./Imagenes/mantenimiento.avif"
+                      type="image/avif"
+                    />
+                    <source
+                      srcset="./Imagenes/mantenimiento.webp"
+                      type="image/webp"
+                    />
+                    <img
+                      src="./Imagenes/mantenimiento.png"
+                      alt="mantenimiento"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </picture>
                 </li>
                 <li>Mantenimiento</li>
                 <li>
@@ -284,7 +492,18 @@
 
             <div class="item">
               <ul>
-                <li><img src="./Imagenes/mobile2.png" alt="mobile" /></li>
+                <li>
+                  <picture>
+                    <source srcset="./Imagenes/mobile2.avif" type="image/avif" />
+                    <source srcset="./Imagenes/mobile2.webp" type="image/webp" />
+                    <img
+                      src="./Imagenes/mobile2.png"
+                      alt="mobile"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </picture>
+                </li>
                 <li>Mobile Priority</li>
                 <li>
                   Estamos actualizados a las últimas tendencias de la web y los
@@ -334,16 +553,36 @@
           <?php } ?>
           <div class="contacto-info">
             <div class="mail">
-              <img
-                src="./Imagenes/mail-icon.png"
-                alt="email"
-              />elizabethmendezp18@gmail.com
+              <picture>
+                <source srcset="./Imagenes/mail-icon.avif" type="image/avif" />
+                <source srcset="./Imagenes/mail-icon.webp" type="image/webp" />
+                <img
+                  src="./Imagenes/mail-icon.png"
+                  alt="email"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+              elizabethmendezp18@gmail.com
             </div>
             <div class="whatsapp">
-              <img
-                src="./Imagenes/whatsapp-icon.png"
-                alt="whatsapp"
-              />+1849-215-1118
+              <picture>
+                <source
+                  srcset="./Imagenes/whatsapp-icon.avif"
+                  type="image/avif"
+                />
+                <source
+                  srcset="./Imagenes/whatsapp-icon.webp"
+                  type="image/webp"
+                />
+                <img
+                  src="./Imagenes/whatsapp-icon.png"
+                  alt="whatsapp"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+              +1849-215-1118
             </div>
           </div>
         </div>
@@ -353,8 +592,17 @@
       <div class="contenedor">
         <div class="redes">
           <a href="#">
-            <img src="./Imagenes/facebook.png" alt="imagen de facebook"
-          /></a>
+            <picture>
+              <source srcset="./Imagenes/facebook.avif" type="image/avif" />
+              <source srcset="./Imagenes/facebook.webp" type="image/webp" />
+              <img
+                src="./Imagenes/facebook.png"
+                alt="imagen de facebook"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
+          </a>
         </div>
         <div class="parrafo">
           <p>
