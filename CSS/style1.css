@@ -221,19 +221,12 @@ h2 {
 }
 
 .hero-media img {
-  width: min(420px, 100%);
+  width: min(440px, 100%);
+  height: 520px;
+  object-fit: cover;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
   border: 8px solid #fff;
-}
-
-.hero-placeholder {
-  width: min(420px, 100%);
-  height: 520px;
-  border-radius: var(--radius-lg);
-  border: 1px solid rgba(200, 165, 107, 0.35);
-  background: linear-gradient(135deg, #f9f4ec, #f1e7d8);
-  box-shadow: var(--shadow);
 }
 
 h3 {
@@ -289,7 +282,7 @@ h3 {
 .servicio {
   background: #fff;
   border-radius: var(--radius-md);
-  padding: 28px;
+  padding: 28px 26px;
   box-shadow: 0 12px 26px rgba(48, 39, 30, 0.08);
   border: 1px solid rgba(200, 165, 107, 0.2);
   position: relative;
@@ -374,6 +367,33 @@ h3 {
   font-size: 15px;
   color: var(--taupe);
   text-align: left;
+}
+
+.owl-theme .owl-nav [class*="owl-"] {
+  background: var(--gold);
+  color: #fff;
+  border-radius: 999px;
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 6px;
+  transition: transform 200ms ease;
+}
+
+.owl-theme .owl-nav [class*="owl-"]:hover {
+  background: var(--gold-dark);
+  transform: translateY(-2px);
+}
+
+.owl-theme .owl-dots .owl-dot span {
+  background: rgba(140, 128, 115, 0.35);
+}
+
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+  background: var(--gold);
 }
 
 #por-que-trabajar {
@@ -469,6 +489,7 @@ h3 {
   border-radius: var(--radius-md);
   box-shadow: var(--shadow);
   text-align: left;
+  height: 100%;
 }
 
 .testimonio-card p {
@@ -494,6 +515,12 @@ h3 {
   gap: 16px;
   margin-top: 30px;
   flex-wrap: wrap;
+}
+
+.testimonios-carousel .item {
+  background: transparent;
+  box-shadow: none;
+  padding: 6px;
 }
 
 .testimonios-garantia span {
