@@ -31,63 +31,38 @@ $(document).ready(function () {
       menu.hover(NotUnderlineHover);
     }
 
+    $("#php h3").css("color","red").css("display","none");
+    if(btn-eviar.click){
+      $("#php h3").css("color","red").css("display","block");
+    }else{
+      alert("para enviar el mensaje pulse el boton de enviar mensaje")
+    }
+    
   });
 
-  $(".menu-icon").click(function () {
-    $("header nav").slideToggle();
+  var menuButton = $(".menu-icon");
+  var menuNav = $("#menu-principal");
+
+  menuButton.on("click", function () {
+    var isExpanded = menuButton.attr("aria-expanded") === "true";
+    menuButton.attr("aria-expanded", String(!isExpanded));
+    menuNav.slideToggle();
   });
 
-  $(".owl-carousel").owlCarousel({
-    loop: true,
-    margin: 10,
-    nav: true,
-    dots: false,
-    responsive: {
-      0: {
-        items: 1,
-      },
-      600: {
-        items: 3,
-      },
-      1000: {
-        items: 4,
-      },
-    },
-  });
+  $(".trabajo-filtro").on("click", function () {
+    var filtro = $(this).data("filter");
 
-  const statusElement = document.getElementById("form-status");
-  if (statusElement) {
-    const params = new URLSearchParams(window.location.search);
-    const status = params.get("status");
-    const code = params.get("code");
-    const messages = {
-      success: "La consulta se envió correctamente. Nos contactaremos a la brevedad.",
-      error: {
-        invalid_method: "No se pudo enviar el formulario. Inténtalo nuevamente.",
-        spam_detected: "No se pudo enviar el formulario. Inténtalo nuevamente.",
-        missing_fields: "Completa todos los campos obligatorios.",
-        invalid_name: "Ingresa un nombre válido.",
-        invalid_name_length: "El nombre debe tener entre 2 y 100 caracteres.",
-        invalid_email: "Ingresa un correo válido.",
-        invalid_message_length: "El mensaje debe tener entre 10 y 1000 caracteres.",
-        invalid_message_content: "El mensaje contiene caracteres no permitidos.",
-        send_failed: "No se pudo enviar el mensaje. Inténtalo más tarde.",
-      },
-    };
+    $(".trabajo-filtro").removeClass("is-active");
+    $(this).addClass("is-active");
 
-    if (status === "success") {
-      statusElement.textContent = messages.success;
-      statusElement.classList.add("form-status--success");
-    } else if (status === "error") {
-      const errorMessage = messages.error[code] || "Ocurrió un error al enviar el formulario.";
-      statusElement.textContent = errorMessage;
-      statusElement.classList.add("form-status--error");
+    if (filtro === "todos") {
+      $(".trabajo-card").removeClass("is-hidden");
+      return;
     }
 
-    if (statusElement.textContent) {
-      statusElement.classList.add("form-status--visible");
-      const cleanUrl = `${window.location.pathname}#contacto`;
-      window.history.replaceState(null, "", cleanUrl);
-    }
-  }
+    $(".trabajo-card").each(function () {
+      var categoria = $(this).data("category");
+      $(this).toggleClass("is-hidden", categoria !== filtro);
+    });
+  });
 });
