@@ -16,8 +16,6 @@
       href="https://fonts.googleapis.com/css?family=Poppins&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="owl/owl.carousel.min.css" />
-    <link rel="stylesheet" href="owl/owl.theme.default.min.css" />
     <title>CONFECCIONES DE INTERIORES ELIZABETH MENDEZ</title>
     <!-- Jquery-->
     <script
@@ -29,7 +27,6 @@
     
     <!-- Mis Scripts-->
     <script src="./js/mis_script.js"></script>
-    <script src="owl/owl.carousel.min.js"></script>
     <!-- Fin mis Scripts-->
   </head>
   <body>
@@ -63,7 +60,28 @@
         <div class="contenedor-titulo">
           <h1>CONFECCIONES ELIZABETH</h1>
           <h2>Costuras de Calidad & Servicios personalizados para tu hogar</h2>
-          <a href="#" id="masifo">VER MAS INFORMACION</a>
+          <p class="header-subtitle">
+            Cortinas y textiles a medida con acabados premium, asesoría cercana y
+            entregas puntuales para renovar tus espacios con confianza.
+          </p>
+          <div class="header-ctas">
+            <a href="#mis-trabajos" class="cta primary">Ver trabajos</a>
+            <a href="#contacto" class="cta secondary">Pedir cotización</a>
+          </div>
+          <div class="header-trust">
+            <div class="trust-item">
+              <span class="trust-number">15+</span>
+              <span class="trust-label">años de experiencia</span>
+            </div>
+            <div class="trust-item">
+              <span class="trust-number">320+</span>
+              <span class="trust-label">proyectos entregados</span>
+            </div>
+            <div class="trust-item">
+              <span class="trust-number">Quito</span>
+              <span class="trust-label">Ecuador</span>
+            </div>
+          </div>
         </div>
       </div>
     </header>
