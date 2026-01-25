@@ -307,6 +307,53 @@
         </div>
       </section>
 
+      <section id="testimonios">
+        <div class="contenedor">
+          <h3>Testimonios</h3>
+          <p class="testimonios-intro">
+            Clientes felices que confiaron en mi trabajo y recibieron resultados
+            a la altura de sus proyectos.
+          </p>
+          <div class="testimonios-grid">
+            <article class="testimonio-card">
+              <div class="testimonio-estrellas" aria-label="5 estrellas">
+                ★★★★★
+              </div>
+              <p>
+                “El sitio quedó limpio, rápido y exactamente como lo
+                imaginábamos. La comunicación fue clara y el proceso súper
+                ordenado.”
+              </p>
+              <span class="testimonio-autor">María L.</span>
+            </article>
+            <article class="testimonio-card">
+              <div class="testimonio-estrellas" aria-label="5 estrellas">
+                ★★★★★
+              </div>
+              <p>
+                “Entregó antes del plazo y con ajustes inmediatos. Recomiendo su
+                servicio por la calidad y compromiso.”
+              </p>
+              <span class="testimonio-autor">Carlos R.</span>
+            </article>
+            <article class="testimonio-card">
+              <div class="testimonio-estrellas" aria-label="5 estrellas">
+                ★★★★★
+              </div>
+              <p>
+                “Nuestro landing quedó listo para campañas en días. Excelente
+                diseño y soporte en todo momento.”
+              </p>
+              <span class="testimonio-autor">Lucía P.</span>
+            </article>
+          </div>
+          <div class="testimonios-garantia">
+            <span>Entrega en 7 días</span>
+            <span>Ajuste sin costo</span>
+          </div>
+        </div>
+      </section>
+
       <section id="contacto">
         <div id="php">
         
