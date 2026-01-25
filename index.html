@@ -40,7 +40,14 @@
       <div class="menu">
         <div class="contenedor">
           <p class="logo">CONFECCIONES DE INTERIORES ELIZABETH MENDEZ</p>
-          <nav>
+          <button
+            class="menu-icon"
+            type="button"
+            aria-label="Abrir menú"
+            aria-expanded="false"
+            aria-controls="menu-principal"
+          ></button>
+          <nav id="menu-principal">
             <ul>
               <li><a href="index.html">Inicio</a></li>
               <li><a href="#">Nuestros Servicios</a></li>
