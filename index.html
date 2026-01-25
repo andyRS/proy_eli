@@ -104,11 +104,9 @@
             <div class="servicio pastelceleste">
               <h4>Cortinas</h4>
               <p>
-                Cortinas de alta calidad, para todo publico & al servicio de
-                todos. Tenemos variedad de Cortinas, para habitaciones, salas,
-                cortinas personalizadas y las variedades que solo encotraras en
-                Confecciones Elizabeth. Para ver mas acerca de nuestras cortinas
-                contacta con nosotros.
+                Cortinas en telas premium y blackouts, confección a medida,
+                instalación incluida y entrega rápida para tu hogar. Solicitar
+                cotización.
               </p>
               <img
                 class="icono"
@@ -122,11 +120,9 @@
             <div class="servicio celeste">
               <h4>Juegos de baños</h4>
               <p>
-                Cortinas de alta calidad, para todo publico & al servicio de
-                todos. Tenemos variedad de Cortinas, para habitaciones, salas,
-                juegos de sabanas, cojines, cortinas personalizadas y las
-                variedades que solo encotraras en Confecciones Elizabeth. Para
-                ver mas acerca de nuestras cortinas contacta con nosotros.
+                Juegos de baño en materiales absorbentes y duraderos,
+                combinaciones a la medida y acabados reforzados con garantía.
+                Solicitar cotización.
               </p>
               <img
                 class="icono"
@@ -140,11 +136,9 @@
             <div class="servicio rosacoral">
               <h4>Cojines</h4>
               <p>
-                Cortinas de alta calidad, para todo publico & al servicio de
-                todos. Tenemos variedad de Cortinas, para habitaciones, salas,
-                cortinas personalizadas y las variedades que solo encotraras en
-                Confecciones Elizabeth. Para ver mas acerca de nuestras cortinas
-                contacta con nosotros.
+                Cojines decorativos con rellenos de alta densidad, medidas y
+                diseños personalizados, listos en pocos días. Solicitar
+                cotización.
               </p>
               <img
                 class="icono"
@@ -158,11 +152,9 @@
             <div class="servicio rosaclaro">
               <h4>Juegos de Sabanas</h4>
               <p>
-                Cortinas de alta calidad, para todo publico & al servicio de
-                todos. Tenemos variedad de Cortinas, para habitaciones, salas,
-                cortinas personalizadas y las variedades que solo encotraras en
-                Confecciones Elizabeth. Para ver mas acerca de nuestras cortinas
-                contacta con nosotros.
+                Sábanas en algodón suave y mezclas resistentes, tallas exactas
+                para tu colchón, costuras reforzadas y garantía. Solicitar
+                cotización.
               </p>
               <img
                 class="icono"
@@ -176,11 +168,9 @@
             <div class="servicio violeta">
               <h4>Alfombras</h4>
               <p>
-                Cortinas de alta calidad, para todo publico & al servicio de
-                todos. Tenemos variedad de Cortinas, para habitaciones, salas,
-                cortinas personalizadas y las variedades que solo encotraras en
-                Confecciones Elizabeth. Para ver mas acerca de nuestras cortinas
-                contacta con nosotros.
+                Alfombras con materiales antideslizantes, corte a medida para
+                cada espacio, instalación opcional y mantenimiento fácil.
+                Solicitar cotización.
               </p>
               <img
                 class="icono"
@@ -193,11 +183,9 @@
             <div class="servicio celeste">
               <h4>Personalizadas</h4>
               <p>
-                Cortinas de alta calidad, para todo publico & al servicio de
-                todos. Tenemos variedad de Cortinas, para habitaciones, salas,
-                cortinas personalizadas y las variedades que solo encotraras en
-                Confecciones Elizabeth. Para ver mas acerca de nuestras cortinas
-                contacta con nosotros.
+                Confecciones especiales a la medida, selección de materiales,
+                tiempos de entrega claros y respaldo de garantía. Solicitar
+                cotización.
               </p>
               <img class="icono" src="./Imagenes/mante.png" alt="mante" />
               <img class="ondas" src="./Imagenes/waves.png" alt="waves" />
