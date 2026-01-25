@@ -308,19 +308,9 @@
       </section>
 
       <section id="contacto">
-        <div id="php">
-        
-                <?php
-                      if(@$_GET['i']=='ok') { // QUIERE DECIR QUE EL FORMULARIO SE ENVIO CORRECTAMENTE ?>
-                <h3>
-                  La consulta se envio correctamente. Nos contactaremos a la brevedad.
-                </h3>
-                <?php
-                      } else{
-                      ?>
-              </div>
         <div class="contenedor">
           <h3>Contacto</h3>
+          <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
           <form
             action="envio-formulario.php"
             method="post"
@@ -329,9 +319,12 @@
             <input type="text" placeholder="Nombre" name="nombre" required />
             <input type="email" placeholder="Email" name="email" required />
             <textarea placeholder="Mensaje" name="mensaje" required></textarea>
-            <input type="submit" value="ENVIAR MENSAJE" id="btn-eviar"/>
+            <div class="hp-field">
+              <label for="website">Sitio web</label>
+              <input type="text" id="website" name="website" autocomplete="off" tabindex="-1" />
+            </div>
+            <input type="submit" value="ENVIAR MENSAJE" id="btn-eviar" />
           </form>
-          <?php } ?>
           <div class="contacto-info">
             <div class="mail">
               <img
