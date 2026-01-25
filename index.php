@@ -3,7 +3,7 @@
   <head>
     <!--  Etiquetas Meta-->
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <meta name="viewport" content="width=device-width" />
     <meta
       name="description"
       content="Confecciones de interiores para tu hogar, únicos & con amor para hechos para ti"
