@@ -415,10 +415,19 @@ h3 {
   line-height: 1.8;
 }
 
-.testimonios-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 24px;
+.testimonios-carousel .item {
+  padding: 12px 16px 18px;
+  display: flex;
+  justify-content: center;
+}
+
+.testimonios-carousel .owl-stage-outer {
+  padding: 8px 0 20px;
+}
+
+.testimonios-carousel .testimonio-card {
+  width: 100%;
+  max-width: 360px;
 }
 
 .testimonio-card {
