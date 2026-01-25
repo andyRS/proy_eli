@@ -13,7 +13,7 @@
     <!-- Estilos-->
     <link rel="stylesheet" href="./CSS/style1.css" />
     <link
-      href="https://fonts.googleapis.com/css?family=Poppins&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
     <title>CONFECCIONES DE INTERIORES ELIZABETH MENDEZ</title>
@@ -36,7 +36,7 @@
     <header id="header">
       <div class="menu">
         <div class="contenedor">
-          <p class="logo">CONFECCIONES DE INTERIORES ELIZABETH MENDEZ</p>
+          <p class="logo">Elizabeth Méndez Atelier</p>
           <button
             class="menu-icon"
             type="button"
@@ -47,26 +47,27 @@
           <nav id="menu-principal">
             <ul>
               <li><a href="index.html">Inicio</a></li>
-              <li><a href="#">Nuestros Servicios</a></li>
-              <li><a href="#">Articulos</a></li>
-              <li><a href="#">Quienes Somos</a></li>
-              <li><a href="#">Cotizaciones</a></li>
-              <li><a href="#">Contactar con nostros</a></li>
+              <li><a href="#servicios">Servicios</a></li>
+              <li><a href="#mis-trabajos">Portafolio</a></li>
+              <li><a href="#sobre-mi">Sobre mí</a></li>
+              <li><a href="#contacto">Cotizaciones</a></li>
+              <li><a href="#contacto">Contacto</a></li>
             </ul>
           </nav>
         </div>
       </div>
-      <div class="contenedor" id="contenedor-titulo-flex">
-        <div class="contenedor-titulo">
-          <h1>CONFECCIONES ELIZABETH</h1>
-          <h2>Costuras de Calidad & Servicios personalizados para tu hogar</h2>
+      <div class="contenedor hero">
+        <div class="hero-content">
+          <span class="hero-eyebrow">Confección artesanal premium</span>
+          <h1>Elizabeth Méndez</h1>
+          <h2>Textiles a medida con alma, precisión y delicadeza.</h2>
           <p class="header-subtitle">
-            Cortinas y textiles a medida con acabados premium, asesoría cercana y
-            entregas puntuales para renovar tus espacios con confianza.
+            Más de 15 años creando cortinas, ropa de cama y detalles de interior
+            con acabados impecables, asesoría cercana y materiales selectos.
           </p>
           <div class="header-ctas">
-            <a href="#mis-trabajos" class="cta primary">Ver trabajos</a>
-            <a href="#contacto" class="cta secondary">Pedir cotización</a>
+            <a href="#mis-trabajos" class="cta primary">Ver portafolio</a>
+            <a href="#contacto" class="cta secondary">Solicitar cotización</a>
           </div>
           <div class="header-trust">
             <div class="trust-item">
@@ -83,40 +84,42 @@
             </div>
           </div>
         </div>
+        <div class="hero-media">
+          <div class="hero-placeholder" aria-hidden="true"></div>
+        </div>
       </div>
     </header>
 
     <main>
       <section id="sobre-mi">
         <div class="contenedor">
-          <h3>Sobre mi</h3>
+          <h3>Sobre mí</h3>
           <div class="contenedor-sobremi">
             <div class="confecciones">
               <img
                 src="./Imagenes/Costura.jpg"
-                alt="Costura "
-                style="border-radius: 10px"
+                alt="Detalles de costura artesanal"
               />
             </div>
             <div class="texto">
               <p>
-                Mi nombre es Elizabeth Mendez, soy confeccionista de ineriores.
-                Tengo basta experiencia en las ultimas tendencias de las
-                decoraciones del interior del hogar, digase como cortinas,
-                cojines, juegos de baños y creaciones de personalizacion.
+                Soy Elizabeth Méndez, confeccionista de interiores con más de
+                quince años trabajando textiles premium para hogares que buscan
+                elegancia, calidez y personalidad.
               </p>
               <p>
-                Me comprometo siempre de que mi trabajo sea de alta Calidad para
-                sastisfacer las necesidades de mis clientes, usando equipos de
-                calidad para asi dar un excelente servicio a todos los que
-                confian en mi trabajo.
+                Me especializo en cortinas, ropa de cama, cojines y piezas
+                personalizadas con acabados artesanales, selección cuidadosa de
+                materiales y una atención completamente cercana.
               </p>
               <p>
-                Puedes ponerte en contacto conmigo a traves de mi pagina de
-                Facebook, Gmail, o completando el formulario de contacto que se
-                encuentra al final de mi sitio web.
+                Cada proyecto es una colaboración creativa donde la técnica y el
+                gusto estético se combinan para transformar espacios en lugares
+                más confortables y bellos.
               </p>
-              <a href="" id="masTrabajo">VER MIS TRABAJOS</a>
+              <a href="#mis-trabajos" id="masTrabajo" class="btn-ghost"
+                >Ver mis trabajos</a
+              >
             </div>
           </div>
         </div>
@@ -129,15 +132,13 @@
             <div class="servicio pastelceleste">
               <h4>Cortinas</h4>
               <p>
-                Cortinas en telas premium y blackouts, confección a medida,
-                instalación incluida y entrega rápida para tu hogar. Solicitar
-                cotización.
+                Telas premium, blackouts y visillos confeccionados a medida con
+                instalación incluida y acabados elegantes.
               </p>
               <img
                 class="icono"
                 src="./Imagenes/cortina-icono.png"
                 alt="icono-costura"
-                style="border-radius: 10px"
               />
               <img class="ondas" src="./Imagenes/waves.png" alt="waves" />
             </div>
@@ -145,15 +146,13 @@
             <div class="servicio celeste">
               <h4>Juegos de baños</h4>
               <p>
-                Juegos de baño en materiales absorbentes y duraderos,
-                combinaciones a la medida y acabados reforzados con garantía.
-                Solicitar cotización.
+                Textiles absorbentes, duraderos y suaves, con combinaciones de
+                color a la medida de tu estilo.
               </p>
               <img
                 class="icono"
                 src="./Imagenes/JuegoBaño.png"
-                alt="juego baÑ"
-                style="border-radius: 35px"
+                alt="juego de baño"
               />
               <img class="ondas" src="./Imagenes/waves.png" alt="waves" />
             </div>
@@ -161,15 +160,13 @@
             <div class="servicio rosacoral">
               <h4>Cojines</h4>
               <p>
-                Cojines decorativos con rellenos de alta densidad, medidas y
-                diseños personalizados, listos en pocos días. Solicitar
-                cotización.
+                Diseños personalizados, rellenos de alta densidad y medidas
+                exactas para elevar la armonía de cada ambiente.
               </p>
               <img
                 class="icono"
                 src="./Imagenes/Cojin.jpg"
                 alt="cojin"
-                style="border-radius: 35px"
               />
               <img class="ondas" src="./Imagenes/waves.png" alt="waves" />
             </div>
@@ -177,15 +174,13 @@
             <div class="servicio rosaclaro">
               <h4>Juegos de Sabanas</h4>
               <p>
-                Sábanas en algodón suave y mezclas resistentes, tallas exactas
-                para tu colchón, costuras reforzadas y garantía. Solicitar
-                cotización.
+                Sábanas en algodón suave y mezclas resistentes, con costuras
+                finas y una sensación de descanso de hotel.
               </p>
               <img
                 class="icono"
                 src="./Imagenes/SABANA-180-HILOS.jpg"
                 alt="icono-costura"
-                style="border-radius: 25px"
               />
               <img class="ondas" src="./Imagenes/waves.png" alt="waves" />
             </div>
@@ -193,9 +188,8 @@
             <div class="servicio violeta">
               <h4>Alfombras</h4>
               <p>
-                Alfombras con materiales antideslizantes, corte a medida para
-                cada espacio, instalación opcional y mantenimiento fácil.
-                Solicitar cotización.
+                Texturas nobles con corte a medida, acabados antideslizantes y
+                mantenimiento sencillo.
               </p>
               <img
                 class="icono"
@@ -208,9 +202,8 @@
             <div class="servicio celeste">
               <h4>Personalizadas</h4>
               <p>
-                Confecciones especiales a la medida, selección de materiales,
-                tiempos de entrega claros y respaldo de garantía. Solicitar
-                cotización.
+                Confecciones especiales con asesoría creativa, selección de
+                textiles y tiempos de entrega claros.
               </p>
               <img class="icono" src="./Imagenes/mante.png" alt="mante" />
               <img class="ondas" src="./Imagenes/waves.png" alt="waves" />
@@ -221,42 +214,42 @@
 
       <section id="mis-trabajos">
         <div class="contenedor">
-          <h3>Mis Trabajos</h3>
+          <h3>Portafolio</h3>
           <div class="owl-carousel owl-theme">
             <div class="item">
               <a href="https://www.google.com">
                 <img src="./Imagenes/sassy.jpg" alt="Sassy" />
-                <p>Sassy Kids</p>
+                <p>Textiles para sala premium</p>
               </a>
             </div>
             <div class="item">
               <a href="https://www.google.com">
                 <img src="./Imagenes/sassy.jpg" alt="Sassy" />
-                <p>Sassy Kids</p>
+                <p>Cortinas a medida</p>
               </a>
             </div>
             <div class="item">
               <a href="https://www.google.com">
                 <img src="./Imagenes/sassy.jpg" alt="Sassy" />
-                <p>Sassy Kids</p>
+                <p>Detalles de costura fina</p>
               </a>
             </div>
             <div class="item">
               <a href="https://www.google.com">
                 <img src="./Imagenes/sassy.jpg" alt="Sassy" />
-                <p>Sassy Kids</p>
+                <p>Ropa de cama artesanal</p>
               </a>
             </div>
             <div class="item">
               <a href="https://www.google.com">
                 <img src="./Imagenes/sassy.jpg" alt="Sassy" />
-                <p>Sassy Kids</p>
+                <p>Texturas y acabados</p>
               </a>
             </div>
             <div class="item">
               <a href="https://www.google.com">
                 <img src="./Imagenes/sassy.jpg" alt="Sassy" />
-                <p>Sassy Kids</p>
+                <p>Confección personalizada</p>
               </a>
             </div>
           </div>
@@ -265,18 +258,17 @@
 
       <section id="por-que-trabajar">
         <div class="contenedor">
-          <h3>¿Por que trabajar con Elizabeth?</h3>
+          <h3>¿Por qué trabajar con Elizabeth?</h3>
           <div class="contenedor-trabajar">
             <div class="item">
               <ul>
                 <li>
                   <img src="./Imagenes/velocidad.png" alt="velocidad" />
                 </li>
-                <li>Velocidad</li>
+                <li>Entrega puntual</li>
                 <li>
-                  Me asegurare de que tus trabajos sean de muy buena calidad y
-                  esten al tiempo solicitado por el cliente o establecido a la
-                  hora de solicitar de mis servicios.
+                  Planificación clara, tiempos de entrega realistas y seguimiento
+                  permanente de cada etapa.
                 </li>
               </ul>
             </div>
@@ -286,11 +278,10 @@
                 <li>
                   <img src="./Imagenes/mantenimiento.png" alt="mantenimiento" />
                 </li>
-                <li>Mantenimiento</li>
+                <li>Comunicación cercana</li>
                 <li>
-                  Mantengo una comunicación constante con mi cliente, para saber
-                  cualquier modificacion, cambios de diseños, colores, tamaños y
-                  sobre todo que su sonrisa y sastifaccion sean las correctas.
+                  Acompañamiento personalizado para elegir telas, colores,
+                  proporciones y ajustes con seguridad.
                 </li>
               </ul>
             </div>
@@ -298,12 +289,10 @@
             <div class="item">
               <ul>
                 <li><img src="./Imagenes/mobile2.png" alt="mobile" /></li>
-                <li>Mobile Priority</li>
+                <li>Atención personalizada</li>
                 <li>
-                  Estamos actualizados a las últimas tendencias de la web y los
-                  diferentes dispositivos moviles, que desde la comididad de su
-                  celular podra acceder a nuestro web-site para ver nuestros
-                  servicios o solicitar cualquier inquietud.
+                  Procesos artesanales con acabados finos y detalles pensados en
+                  cada pieza.
                 </li>
               </ul>
             </div>
@@ -314,9 +303,10 @@
       <section id="que-esperas">
         <div class="contenedor">
           <h3>
-            ¿Qué esperas para ponerte en contacto conmigo?. !Pide tu servicio.
+            ¿Lista para transformar tus espacios con textiles exclusivos?
+            Coordinemos tu proyecto.
           </h3>
-          <a href="#" id="charlemos">CHARLEMOS</a>
+          <a href="#contacto" id="charlemos">Hablemos</a>
         </div>
       </section>
 
