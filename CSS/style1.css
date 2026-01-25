@@ -343,6 +343,47 @@ h3 {
   text-align: left;
 }
 
+.owl-theme .owl-nav {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.owl-theme .owl-nav [class*="owl-"] {
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 1px solid var(--sand);
+  background: var(--cream);
+  color: var(--gold);
+  font-size: 18px;
+  transition: background 200ms ease, color 200ms ease, border-color 200ms ease;
+}
+
+.owl-theme .owl-nav [class*="owl-"]:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #fff;
+}
+
+.owl-theme .owl-dots {
+  margin-top: 18px;
+}
+
+.owl-theme .owl-dots .owl-dot span {
+  width: 10px;
+  height: 10px;
+  background: var(--taupe);
+  opacity: 0.4;
+}
+
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+  background: var(--gold);
+  opacity: 1;
+}
+
 #por-que-trabajar {
   background: var(--cream);
 }
