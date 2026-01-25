@@ -211,37 +211,37 @@
           <h3>Mis Trabajos</h3>
           <div class="owl-carousel owl-theme">
             <div class="item">
-              <a href="www.google.com">
+              <a href="https://www.google.com">
                 <img src="./Imagenes/sassy.jpg" alt="Sassy" />
                 <p>Sassy Kids</p>
               </a>
             </div>
             <div class="item">
-              <a href="www.google.com">
+              <a href="https://www.google.com">
                 <img src="./Imagenes/sassy.jpg" alt="Sassy" />
                 <p>Sassy Kids</p>
               </a>
             </div>
             <div class="item">
-              <a href="www.google.com">
+              <a href="https://www.google.com">
                 <img src="./Imagenes/sassy.jpg" alt="Sassy" />
                 <p>Sassy Kids</p>
               </a>
             </div>
             <div class="item">
-              <a href="www.google.com">
+              <a href="https://www.google.com">
                 <img src="./Imagenes/sassy.jpg" alt="Sassy" />
                 <p>Sassy Kids</p>
               </a>
             </div>
             <div class="item">
-              <a href="www.google.com">
+              <a href="https://www.google.com">
                 <img src="./Imagenes/sassy.jpg" alt="Sassy" />
                 <p>Sassy Kids</p>
               </a>
             </div>
             <div class="item">
-              <a href="www.google.com">
+              <a href="https://www.google.com">
                 <img src="./Imagenes/sassy.jpg" alt="Sassy" />
                 <p>Sassy Kids</p>
               </a>
