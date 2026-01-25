@@ -40,8 +40,13 @@ $(document).ready(function () {
     
   });
 
-  $(".menu-icon").click(function () {
-    $("header nav").slideToggle();
+  var menuButton = $(".menu-icon");
+  var menuNav = $("#menu-principal");
+
+  menuButton.on("click", function () {
+    var isExpanded = menuButton.attr("aria-expanded") === "true";
+    menuButton.attr("aria-expanded", String(!isExpanded));
+    menuNav.slideToggle();
   });
 
   $(".trabajo-filtro").on("click", function () {
