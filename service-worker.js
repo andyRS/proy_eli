@@ -5,11 +5,11 @@
 
 const CACHE_NAME = 'elizabethmendez-v1';
 const urlsToCache = [
-    '/',
-    '/index.html',
-    '/CSS/style1.css',
-    '/JS/mis_script.js',
-    '/Imagenes/LcdaElizabeth.png'
+    './',
+    './index.html',
+    './CSS/style1.css',
+    './js/mis_script.js',
+    './Imagenes/LcdaElizabeth.png'
 ];
 
 // Install event
