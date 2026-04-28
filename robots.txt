@@ -1,0 +1,13 @@
+# robots.txt — Elizabeth Mendez
+# https://elizabethmendez.com
+
+User-agent: *
+Allow: /
+
+# No indexar el handler del formulario ni archivos de sistema
+Disallow: /envio-formulario.php
+Disallow: /index.php
+Disallow: /.claude/
+
+# Sitemap
+Sitemap: https://elizabethmendez.com/sitemap.xml

@@ -1,0 +1,52 @@
+{
+  "name": "Elizabeth Mendez · Diseñadora de Modas",
+  "short_name": "Elizabeth Mendez",
+  "description": "Vestidos exclusivos para niñas. Diseño y confección artesanal de alta costura en Santo Domingo, RD.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FEFDFB",
+  "theme_color": "#C9A668",
+  "orientation": "portrait-primary",
+  "lang": "es",
+  "scope": "/",
+  "categories": ["shopping", "lifestyle", "fashion"],
+  "icons": [
+    {
+      "src": "Imagenes/favicon_transparente.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon",
+      "purpose": "any"
+    },
+    {
+      "src": "Imagenes/favicon_transparente.ico",
+      "sizes": "192x192",
+      "type": "image/x-icon",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "Imagenes/LcdaElizabeth.png",
+      "sizes": "600x700",
+      "type": "image/png",
+      "label": "Elizabeth Mendez — Diseñadora de Modas"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Ver colección",
+      "url": "/#galeria-vestidos",
+      "description": "Explorar la galería de vestidos"
+    },
+    {
+      "name": "Solicitar cotización",
+      "url": "/#contacto",
+      "description": "Contactar a Elizabeth Mendez"
+    },
+    {
+      "name": "Calcular presupuesto",
+      "url": "/#calculadora",
+      "description": "Calcular el presupuesto de tu vestido"
+    }
+  ]
+}

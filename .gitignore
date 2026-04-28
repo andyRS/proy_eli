@@ -1,0 +1,33 @@
+# ─── Sistema operativo ───────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ─── Editores ────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ─── Node (si se agrega en el futuro) ────────
+node_modules/
+npm-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# ─── PHP ─────────────────────────────────────
+# Archivos de rate-limit (temporales del servidor)
+/tmp/em_rl_*.json
+
+# ─── Logs ────────────────────────────────────
+*.log
+error_log
+
+# ─── Archivos de entorno/secretos ────────────
+.env
+.env.local
+.env.*.local
+
+# ─── Claude Code ─────────────────────────────
+.claude/settings.local.json
