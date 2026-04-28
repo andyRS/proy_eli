@@ -1763,6 +1763,7 @@ function initAll() {
   setupNotifications();
   generateCSRFToken();
   setupActiveNav();
+  setupCounters();
 
   console.log("✅ Todas las funcionalidades inicializadas correctamente");
 }
@@ -1772,6 +1773,57 @@ if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", initAll);
 } else {
   initAll();
+}
+
+// ============================================
+// BARRA DE PROGRESO DE SCROLL
+// ============================================
+const progressBar = document.getElementById('scroll-progress');
+if (progressBar) {
+  window.addEventListener('scroll', () => {
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = docHeight > 0 ? (window.scrollY / docHeight) * 100 : 0;
+    progressBar.style.width = `${Math.min(pct, 100)}%`;
+  }, { passive: true });
+}
+
+// ============================================
+// CONTADORES ANIMADOS (count-up al entrar en viewport)
+// ============================================
+function animateCounter(el, target, suffix, duration = 1600) {
+  const start = performance.now();
+  const isFloat = target % 1 !== 0;
+
+  function step(now) {
+    const elapsed = now - start;
+    const progress = Math.min(elapsed / duration, 1);
+    const ease = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+    const current = isFloat
+      ? (target * ease).toFixed(1)
+      : Math.round(target * ease);
+    el.textContent = current + suffix;
+    if (progress < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+function setupCounters() {
+  const counterEls = document.querySelectorAll('.stat-number, .feature-number');
+  if (!counterEls.length) return;
+
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      const raw = el.textContent.trim();
+      const suffix = raw.replace(/[\d.]/g, '');  // "+", "%", etc.
+      const value  = parseFloat(raw.replace(/[^\d.]/g, ''));
+      if (!isNaN(value)) animateCounter(el, value, suffix);
+      counterObserver.unobserve(el);
+    });
+  }, { threshold: 0.6 });
+
+  counterEls.forEach((el) => counterObserver.observe(el));
 }
 
 // Make functions globally accessible

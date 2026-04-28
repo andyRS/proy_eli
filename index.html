@@ -61,7 +61,7 @@
     />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="./CSS/style1.css?v=1.0.1" />
+    <link rel="stylesheet" href="./CSS/style1.css?v=2.0.0" />
 
     <!-- Favicons -->
     <link rel="icon" href="Imagenes/favicon_transparente.ico" type="image/x-icon" />
@@ -80,7 +80,7 @@
     <meta name="referrer" content="strict-origin-when-cross-origin" />
 
     <!-- Scripts -->
-    <script src="./js/mis_script.js" defer></script>
+    <script src="./js/mis_script.js?v=2.0.0" defer></script>
 
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
@@ -109,6 +109,9 @@
     </script>
   </head>
   <body>
+    <!-- Barra de progreso de scroll -->
+    <div id="scroll-progress" aria-hidden="true"></div>
+
     <!-- Skip to content link (Accesibilidad) -->
     <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
@@ -424,6 +427,13 @@
           </div>
         </div>
       </section>
+
+      <!-- Separador hero → galería -->
+      <div class="wave-divider" aria-hidden="true">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#faf8f5"/>
+        </svg>
+      </div>
 
       <!-- Galería de Vestidos con Filtros Inteligentes -->
       <section id="galeria-vestidos" class="galeria-vestidos section">
@@ -1079,6 +1089,13 @@
           </div>
         </div>
       </section>
+
+      <!-- Separador sobre-mi → servicios -->
+      <div class="wave-divider" aria-hidden="true">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0,20 C480,60 960,0 1440,40 L1440,60 L0,60 Z" fill="#faf8f5"/>
+        </svg>
+      </div>
 
       <!-- Servicios -->
       <section id="servicios" class="section">

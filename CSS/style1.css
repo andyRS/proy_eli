@@ -807,11 +807,30 @@ select:focus-visible {
 }
 
 .hero-title .highlight {
-    background: var(--gradient-premium);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--terracotta);
     font-weight: 500;
+    font-style: italic;
+    position: relative;
+    display: inline;
+}
+
+/* Subrayado decorativo animado bajo el highlight */
+.hero-title .highlight::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--gradient-premium);
+    border-radius: 999px;
+    transform-origin: left;
+    animation: underlineGrow 1s 0.8s ease both;
+}
+
+@keyframes underlineGrow {
+    from { transform: scaleX(0); opacity: 0; }
+    to   { transform: scaleX(1); opacity: 1; }
 }
 
 .hero-description {
@@ -2726,11 +2745,11 @@ footer {
 /* Media Queries para Servicios - Tablet */
 @media (max-width: 768px) and (min-width: 481px) {
     .services-grid {
-        grid-template-columns: 1fr !important;
-        gap: 28px;
-        padding: 0 20px;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px;
+        padding: 0 16px;
     }
-    
+
     .service-card {
         max-width: 100%;
         width: 100%;
@@ -2738,20 +2757,19 @@ footer {
         background: white;
         border-radius: 16px;
         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-        padding: 28px 24px;
+        padding: 20px 18px;
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    
-    /* Mantener interactividad en tablets */
+
     .service-card:hover {
         transform: translateY(-8px) scale(1.01);
     }
-    
+
     .service-icon {
-        font-size: 2.8em;
-        margin-bottom: 16px;
+        font-size: 2.2em;
+        margin-bottom: 12px;
     }
-    
+
     .service-card:hover .service-icon {
         transform: scale(1.15) rotate(8deg);
     }
@@ -2779,21 +2797,21 @@ footer {
 /* Media Queries para Servicios - Móvil */
 @media (max-width: 480px) {
     .services-grid {
-        grid-template-columns: 1fr !important;
+        grid-template-columns: repeat(2, 1fr) !important;
         justify-items: center;
-        gap: 24px !important;
+        gap: 14px !important;
         padding: 0 8px !important;
     }
     
     .service-card {
-        max-width: 340px;
+        max-width: 100%;
         width: 100%;
         margin: 0 auto;
         text-align: center;
         background: #fff;
         border-radius: 12px;
         box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        padding: 20px 16px;
+        padding: 16px 12px;
         transition: all 0.3s ease;
     }
     
@@ -2818,13 +2836,19 @@ footer {
     }
     
     .service-card h3 {
-        font-size: 18px;
-        margin-bottom: 10px;
-    }
-    
-    .service-card p {
         font-size: 14px;
-        margin-bottom: 14px;
+        margin-bottom: 6px;
+    }
+
+    .service-card p {
+        font-size: 12px;
+        margin-bottom: 8px;
+        line-height: 1.4;
+    }
+
+    /* Ocultar la lista en 2 col para no saturar el espacio */
+    .service-card .service-features {
+        display: none;
     }
     
     .service-features {
@@ -2949,7 +2973,7 @@ footer {
 
     /* Grid ajustes */
     .services-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .extras-grid {
@@ -2957,7 +2981,7 @@ footer {
     }
 
     .sobre-mi-stats {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -3523,6 +3547,292 @@ footer {
         border: 2px solid #000;
         box-shadow: none;
     }
+}
+
+/* ============================================
+   SCROLL PROGRESS BAR
+   ============================================ */
+#scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background: var(--gradient-premium);
+    z-index: 10001;
+    border-radius: 0 2px 2px 0;
+    transition: width 0.1s linear;
+    pointer-events: none;
+}
+
+/* ============================================
+   SEPARADORES DE OLA ENTRE SECCIONES
+   ============================================ */
+.wave-divider {
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    margin-bottom: -2px;
+}
+
+.wave-divider svg {
+    display: block;
+    width: 100%;
+    height: clamp(40px, 6vw, 80px);
+}
+
+/* ============================================
+   CONTADORES ANIMADOS
+   ============================================ */
+.stat-number,
+.feature-number {
+    display: inline-block;
+    transition: none;
+}
+
+/* ============================================
+   MEJORAS DE TIPOGRAFÍA Y JERARQUÍA VISUAL
+   ============================================ */
+
+/* Section eyebrow más legible */
+.section-eyebrow {
+    font-size: clamp(11px, 1.8vw, 12px);
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.section-eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 2px;
+    background: var(--terracotta);
+    flex-shrink: 0;
+    border-radius: 999px;
+}
+
+/* Section title con más peso */
+.section-title {
+    font-size: clamp(28px, 6vw, 52px);
+    line-height: 1.15;
+    color: var(--charcoal);
+    font-weight: 400;
+    margin-bottom: clamp(12px, 2vw, 16px);
+}
+
+/* Descripción de sección */
+.section-description {
+    font-size: clamp(14px, 2.2vw, 16px);
+    color: #5a5450;
+    line-height: 1.75;
+    max-width: 58ch;
+}
+
+.section-header.centered .section-description {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ============================================
+   MEJORAS DEL HERO
+   ============================================ */
+.hero-title {
+    font-size: clamp(36px, 9vw, 72px);
+    line-height: 1.08;
+    margin-bottom: clamp(20px, 4vw, 28px);
+    color: #1e1b18;
+    font-weight: 300;
+    letter-spacing: -0.01em;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.hero-description {
+    font-size: clamp(15px, 2.5vw, 17px);
+    color: #4a4540;
+    line-height: 1.85;
+    margin-bottom: clamp(24px, 5vw, 36px);
+}
+
+/* Botón primario más vibrante */
+.btn-primary {
+    background: linear-gradient(135deg, #c9814a 0%, var(--terracotta) 50%, #c06060 100%);
+    color: white;
+    border: none;
+    letter-spacing: 0.06em;
+    box-shadow: 0 4px 16px rgba(212, 144, 126, 0.35);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(212, 144, 126, 0.45);
+    filter: brightness(1.06);
+}
+
+.btn-primary:active {
+    transform: translateY(-1px);
+}
+
+/* Botón outline mejorado */
+.btn-outline {
+    border: 2px solid var(--charcoal);
+    color: var(--charcoal);
+    background: transparent;
+    letter-spacing: 0.06em;
+    transition: all 0.25s ease;
+}
+
+.btn-outline:hover {
+    background: var(--charcoal);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* ============================================
+   TRUST BADGES MEJORADOS
+   ============================================ */
+.trust-badges {
+    background: white;
+    border-top: 1px solid var(--beige);
+    border-bottom: 1px solid var(--beige);
+    padding: clamp(20px, 3vw, 28px) clamp(20px, 4vw, 48px);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+}
+
+.badge {
+    flex-direction: column;
+    text-align: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-right: 1px solid var(--beige);
+}
+
+.badge:last-child {
+    border-right: none;
+}
+
+.badge-icon {
+    font-size: clamp(22px, 4vw, 28px);
+}
+
+.badge-text {
+    font-size: clamp(10px, 1.8vw, 12px);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--charcoal);
+}
+
+@media (max-width: 480px) {
+    .badge {
+        border-right: none;
+        border-bottom: 1px solid var(--beige);
+        padding: 10px 8px;
+        flex-direction: row;
+        text-align: left;
+    }
+    .badge:last-child { border-bottom: none; }
+}
+
+/* ============================================
+   SEPARACIÓN VISUAL ENTRE SECCIONES
+   ============================================ */
+#galeria-vestidos { background: #faf8f5; }
+#sobre-mi         { background: white; }
+#servicios        { background: #faf8f5; }
+#testimonios      { background: white; }
+#contacto         { background: var(--cream); }
+
+/* ============================================
+   MEJORAS EN CARDS DE VESTIDOS
+   ============================================ */
+.vestido-card {
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.04);
+    border: 1px solid rgba(232, 227, 219, 0.6);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.vestido-card:hover {
+    border-color: rgba(201, 166, 104, 0.3);
+}
+
+/* ============================================
+   MEJORAS EN TESTIMONIOS
+   ============================================ */
+.testimonial {
+    border: 1px solid var(--beige);
+    position: relative;
+}
+
+.testimonial-stars {
+    letter-spacing: 3px;
+}
+
+/* ============================================
+   MEJORAS EN FOOTER
+   ============================================ */
+footer {
+    background: linear-gradient(180deg, #2a2622 0%, #1e1b18 100%);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+/* ============================================
+   NAV MEJORADO
+   ============================================ */
+.nav-menu a {
+    position: relative;
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: var(--gold);
+    border-radius: 999px;
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after {
+    width: 70%;
+}
+
+/* ============================================
+   ::selection — texto seleccionado con marca
+   ============================================ */
+::selection {
+    background: rgba(201, 166, 104, 0.25);
+    color: var(--charcoal);
+}
+
+/* ============================================
+   SCROLLBAR ESTILIZADA (solo Chromium)
+   ============================================ */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: var(--cream);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--gold);
+    border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--terracotta);
 }
 
 /* ============================================
