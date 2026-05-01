@@ -421,6 +421,98 @@ select:focus-visible {
     pointer-events: none;
 }
 
+/* Acciones del CTA: WhatsApp + Botón */
+.sticky-cta-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+/* Botón WhatsApp dentro del CTA (solo desktop) */
+.sticky-wa-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    color: white;
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+}
+
+.sticky-wa-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: white;
+    flex-shrink: 0;
+}
+
+.sticky-wa-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+    filter: brightness(1.08);
+}
+
+/* ─── Separación automática: cuando el CTA es visible,
+       el botón flotante de WhatsApp sube para no quedar debajo ─── */
+
+/* Transición suave en el bottom */
+.whatsapp-btn,
+.scroll-top {
+    transition: bottom 0.4s ease, opacity var(--transition-base),
+                visibility var(--transition-base), transform var(--transition-base);
+}
+
+/* Con :has() (Chrome 105+, Safari 15.4+, FF 121+)
+   cuando el CTA está visible: subir el botón flotante
+   lo suficiente para no quedar bajo la barra (~70px) */
+body:has(#stickyCta.visible) .whatsapp-btn {
+    bottom: calc(70px + clamp(20px, 4vw, 32px));
+}
+
+body:has(#stickyCta.visible) .scroll-top {
+    bottom: calc(70px + clamp(90px, 15vw, 110px));
+}
+
+/* En móvil: ocultamos el botón flotante cuando el CTA esté visible
+   (ya está dentro del CTA, sería redundante) */
+@media (max-width: 768px) {
+    body:has(#stickyCta.visible) .whatsapp-btn {
+        opacity: 0;
+        pointer-events: none;
+        visibility: hidden;
+    }
+
+    /* En móvil ocultamos el botón WhatsApp dentro del CTA
+       (espacio reducido — solo el botón de cotización) */
+    .sticky-wa-btn {
+        display: none;
+    }
+
+    /* El botón de cotización ocupa el ancho posible */
+    .sticky-quote-btn {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .sticky-cta-actions {
+        width: 100%;
+    }
+
+    .sticky-cta-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
+
 /* ============================================
    NOTIFICATION PROMPT - RESPONSIVE
    ============================================ */
@@ -1502,8 +1594,10 @@ select:focus-visible {
 }
 
 .carousel-slide {
+    /* El JS sobreescribe esto con el valor exacto calculado del wrapper */
     min-width: calc(33.333% - 22px);
     flex-shrink: 0;
+    box-sizing: border-box;
 }
 
 .vestido-card {
@@ -1958,18 +2052,18 @@ select:focus-visible {
 
     .testimonial {
         font-size: 1rem;
-        padding: 16px 8px;
+        padding: 28px 20px;
         background: #fff;
         color: #222;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        border-radius: 14px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.07);
         max-width: 100%;
         margin: 0 auto;
     }
 
     .testimonial-quote {
-        font-size: 1em;
-        line-height: 1.4;
+        font-size: 14px;
+        line-height: 1.75;
         word-break: break-word;
     }
 
@@ -2755,9 +2849,9 @@ footer {
         width: 100%;
         margin: 0 auto;
         background: white;
-        border-radius: 16px;
+        border-radius: 20px;
         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-        padding: 20px 18px;
+        padding: 28px 24px;
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
@@ -2766,29 +2860,29 @@ footer {
     }
 
     .service-icon {
-        font-size: 2.2em;
-        margin-bottom: 12px;
+        font-size: 2.6em;
+        margin-bottom: 14px;
     }
 
     .service-card:hover .service-icon {
         transform: scale(1.15) rotate(8deg);
     }
-    
+
     .service-card h3 {
         font-size: 22px;
         margin-bottom: 12px;
     }
-    
+
     .service-card p {
         font-size: 15px;
         margin-bottom: 18px;
     }
-    
+
     .service-features li {
         font-size: 14px;
         padding: 7px 0 7px 28px;
     }
-    
+
     .service-card:hover .service-features li {
         padding-left: 32px;
     }
@@ -2797,58 +2891,58 @@ footer {
 /* Media Queries para Servicios - Móvil */
 @media (max-width: 480px) {
     .services-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-        justify-items: center;
-        gap: 14px !important;
-        padding: 0 8px !important;
+        grid-template-columns: 1fr !important;
+        justify-items: stretch;
+        gap: 20px !important;
+        padding: 0 4px !important;
     }
-    
+
     .service-card {
         max-width: 100%;
         width: 100%;
         margin: 0 auto;
-        text-align: center;
+        text-align: left;
         background: #fff;
-        border-radius: 12px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        padding: 16px 12px;
+        border-radius: 18px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+        padding: 24px 20px;
         transition: all 0.3s ease;
     }
-    
+
     /* Efectos simplificados para móvil */
     .service-card:active {
         transform: scale(0.98);
         box-shadow: 0 4px 16px rgba(201, 166, 104, 0.2);
     }
-    
+
     .service-card::before {
         display: none; /* Desactivar brillo en móvil para mejor performance */
     }
-    
+
     .service-icon {
-        font-size: 2.2em;
-        margin-bottom: 12px;
+        font-size: 2.6em;
+        margin-bottom: 14px;
         transition: transform 0.3s ease;
     }
-    
+
     .service-card:active .service-icon {
         transform: scale(1.1);
     }
-    
+
     .service-card h3 {
-        font-size: 14px;
-        margin-bottom: 6px;
+        font-size: 18px;
+        margin-bottom: 10px;
     }
 
     .service-card p {
-        font-size: 12px;
-        margin-bottom: 8px;
-        line-height: 1.4;
+        font-size: 14px;
+        margin-bottom: 14px;
+        line-height: 1.55;
     }
 
-    /* Ocultar la lista en 2 col para no saturar el espacio */
+    /* Mostrar la lista en 1 col para apreciar todas las features */
     .service-card .service-features {
-        display: none;
+        display: block;
     }
     
     .service-features {
@@ -2920,7 +3014,7 @@ footer {
     .nav-menu {
         position: fixed;
         top: 0;
-        right: -100%;
+        right: 0;
         width: 100%;
         max-width: 100%;
         height: 100vh;
@@ -2929,14 +3023,10 @@ footer {
         flex-direction: column;
         padding: clamp(80px, 15vw, 100px) clamp(24px, 5vw, 40px);
         gap: clamp(24px, 5vw, 32px);
-        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         box-shadow: -4px 0 30px rgba(0, 0, 0, 0.1);
         z-index: 999;
         overflow-y: auto;
-    }
-
-    .nav-menu.active {
-        right: 0;
+        /* Animación via transform (GPU) — ver bloque al final */
     }
 
     .menu-toggle {
@@ -2957,8 +3047,54 @@ footer {
         min-width: 100%;
     }
 
+    /* Testimonios móvil — botones bajan al pie */
     .testimonials-carousel-container {
-        padding: 0 clamp(36px, 8vw, 50px);
+        padding: 0 0 72px 0;  /* espacio abajo para nav */
+    }
+
+    .testimonial-btn {
+        position: absolute;
+        top: auto;
+        bottom: 0;
+        transform: none;
+        width: 44px;
+        height: 44px;
+    }
+
+    .testimonial-btn-prev {
+        left: calc(50% - 70px);
+    }
+
+    .testimonial-btn-next {
+        right: calc(50% - 70px);
+    }
+
+    .testimonials-dots {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+    }
+
+    /* Tarjeta testimonio: padding más cómodo */
+    .testimonial {
+        padding: 28px 20px;
+    }
+
+    /* Hint de deslizamiento (debajo del wrapper, antes de los dots) */
+    .testimonials-carousel-container::before {
+        content: '← Desliza →';
+        display: block;
+        text-align: center;
+        font-size: 11px;
+        color: var(--warm-gray);
+        letter-spacing: 0.8px;
+        position: absolute;
+        bottom: 50px;
+        left: 0;
+        right: 0;
+        opacity: 0.65;
     }
 
     /* Hero móvil */
@@ -2991,8 +3127,31 @@ footer {
         padding: 0 clamp(32px, 10vw, 40px);
     }
 
+    /* ≤480px: igual, sin padding lateral */
     .testimonials-carousel-container {
-        padding: 0 clamp(32px, 10vw, 40px);
+        padding: 0 0 68px 0;
+    }
+
+    .testimonial-btn-prev {
+        left: calc(50% - 64px);
+    }
+
+    .testimonial-btn-next {
+        right: calc(50% - 64px);
+    }
+
+    .testimonial {
+        padding: 24px 18px;
+        border-radius: 14px;
+    }
+
+    .testimonial-quote {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .testimonial-name {
+        font-size: 14px;
     }
 
     .vestido-card:hover .favorite-btn,
@@ -4178,4 +4337,225 @@ footer {
     .menu-toggle {
         display: none !important;
     }
+}
+
+/* ============================================
+   RIPPLE EFFECT EN BOTONES
+   ============================================ */
+.btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple {
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.32);
+    transform: translate(-50%, -50%) scale(0);
+    animation: rippleAnim 0.55s ease-out forwards;
+    pointer-events: none;
+}
+
+@keyframes rippleAnim {
+    to {
+        transform: translate(-50%, -50%) scale(4);
+        opacity: 0;
+    }
+}
+
+/* ============================================
+   MENÚ MÓVIL — SLIDE-IN SUAVE (GPU)
+   ============================================ */
+@media (max-width: 768px) {
+    .nav-menu {
+        /* Reemplazamos right:-100% por transform (GPU) */
+        right: 0 !important;
+        transform: translateX(100%);
+        opacity: 0;
+        transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1),
+                    opacity    0.32s ease;
+        visibility: hidden;
+    }
+
+    .nav-menu.active {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* Ítem stagger: cada <li> entra con un pequeño delay */
+    .nav-menu li {
+        opacity: 0;
+        transform: translateX(24px);
+        transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    .nav-menu.active li {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .nav-menu.active li:nth-child(1) { transition-delay: 0.08s; }
+    .nav-menu.active li:nth-child(2) { transition-delay: 0.13s; }
+    .nav-menu.active li:nth-child(3) { transition-delay: 0.18s; }
+    .nav-menu.active li:nth-child(4) { transition-delay: 0.23s; }
+    .nav-menu.active li:nth-child(5) { transition-delay: 0.28s; }
+    .nav-menu.active li:nth-child(6) { transition-delay: 0.33s; }
+
+    /* Overlay semi-transparente detrás del menú */
+    .nav-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(30, 27, 24, 0.5);
+        backdrop-filter: blur(3px);
+        z-index: 998;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.32s ease;
+    }
+
+    .nav-overlay.active {
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
+/* ============================================
+   SKELETON LOADER — IMÁGENES DE VESTIDOS
+   ============================================ */
+.vestido-image {
+    position: relative;
+}
+
+.vestido-image img.img-loading {
+    background: linear-gradient(
+        90deg,
+        #f0ece8 25%,
+        #e6e0da 50%,
+        #f0ece8 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.4s infinite linear;
+    color: transparent; /* hide alt text while loading */
+}
+
+.vestido-image img.img-loaded {
+    animation: none;
+    background: transparent;
+}
+
+@keyframes shimmer {
+    0%   { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* ============================================
+   GALERÍA — EMPTY STATE (sin resultados)
+   ============================================ */
+.gallery-empty-state {
+    display: none;
+    text-align: center;
+    padding: 60px 24px;
+    animation: fadeInUp 0.4s ease both;
+}
+
+.gallery-empty-state .empty-icon {
+    font-size: 4rem;
+    margin-bottom: 16px;
+    filter: grayscale(0.4);
+}
+
+.gallery-empty-state h3 {
+    font-size: clamp(18px, 3vw, 22px);
+    color: var(--charcoal);
+    margin-bottom: 10px;
+}
+
+.gallery-empty-state p {
+    font-size: 15px;
+    color: var(--warm-gray);
+}
+
+.gallery-empty-state .btn-link {
+    background: none;
+    border: none;
+    color: var(--gold);
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 0;
+}
+
+/* ============================================
+   FILTROS — BADGE DE CONTEO
+   ============================================ */
+.chip-dropdown label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.filter-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 5px;
+    background: var(--gradient-premium);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    border-radius: 999px;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+/* ============================================
+   CONTACTO — LABEL FLOTA EN FOCUS/FILLED
+   ============================================ */
+.form-group.floating .form-label-wrap {
+    position: relative;
+    display: block;
+}
+
+.form-group.floating label {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+    font-size: 15px;
+    color: var(--warm-gray);
+    background: transparent;
+    padding: 0 4px;
+    pointer-events: none;
+    transition: top 0.22s ease, font-size 0.22s ease, color 0.22s ease, transform 0.22s ease;
+    z-index: 1;
+}
+
+.form-group.floating.has-focus label,
+.form-group.floating.has-value label {
+    top: 0;
+    transform: translateY(-100%);
+    font-size: 11px;
+    color: var(--gold);
+    background: white;
+}
+
+/* Borde animado al focus */
+.contact-form .form-group input:focus,
+.contact-form .form-group select:focus,
+.contact-form .form-group textarea:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(201, 166, 104, 0.15);
+}
+
+/* Label suave: cambia color al enfocar */
+.contact-form .form-group:focus-within > label {
+    color: var(--terracotta);
+    transition: color 0.2s ease;
 }

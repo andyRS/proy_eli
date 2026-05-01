@@ -67,37 +67,47 @@ if (stickyCta && footer) {
 }
 
 // Mobile menu toggle (accesible)
+const navOverlay = document.getElementById("navOverlay");
+
+function openMenu() {
+  menuToggle.setAttribute("aria-expanded", "true");
+  navMenu.classList.add("active");
+  if (navOverlay) navOverlay.classList.add("active");
+  document.body.classList.add("menu-open");
+  menuToggle.setAttribute("aria-label", "Cerrar menú de navegación");
+}
+
+function closeMenu() {
+  menuToggle.setAttribute("aria-expanded", "false");
+  navMenu.classList.remove("active");
+  if (navOverlay) navOverlay.classList.remove("active");
+  document.body.classList.remove("menu-open");
+  menuToggle.setAttribute("aria-label", "Abrir menú de navegación");
+}
+
 if (menuToggle && navMenu) {
   menuToggle.addEventListener("click", () => {
     const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
-
-    // Estado accesible
-    menuToggle.setAttribute("aria-expanded", String(!isOpen));
-
-    // Estado visual
-    navMenu.classList.toggle("active", !isOpen);
-
-    // Bloquear scroll cuando el menú está abierto
-    document.body.classList.toggle("menu-open", !isOpen);
+    if (isOpen) closeMenu(); else openMenu();
   });
+
+  // Cerrar al hacer clic en overlay
+  if (navOverlay) {
+    navOverlay.addEventListener("click", closeMenu);
+  }
 
   // Cerrar menú con ESC
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && navMenu.classList.contains("active")) {
-      navMenu.classList.remove("active");
-      menuToggle.setAttribute("aria-expanded", "false");
-      document.body.classList.remove("menu-open");
+      closeMenu();
+      menuToggle.focus();
     }
   });
 }
 
 // Close menu on link click
 document.querySelectorAll(".nav-menu a").forEach((link) => {
-  link.addEventListener("click", () => {
-    navMenu.classList.remove("active");
-    menuToggle.setAttribute("aria-expanded", "false");
-    document.body.classList.remove("menu-open");
-  });
+  link.addEventListener("click", closeMenu);
 });
 
 // Scroll to top
@@ -149,15 +159,30 @@ function getWhatsAppMessage() {
   );
 }
 
+function openWhatsApp() {
+  const message = encodeURIComponent(getWhatsAppMessage());
+  window.open(
+    `https://api.whatsapp.com/send?phone=+18492151118&text=${message}`,
+    "_blank",
+    "noopener",
+  );
+}
+
+// Botón flotante de WhatsApp
 const whatsappBtn = document.getElementById("whatsappBtn");
 if (whatsappBtn) {
   whatsappBtn.addEventListener("click", function (e) {
     e.preventDefault();
-    const message = encodeURIComponent(getWhatsAppMessage());
-    window.open(
-      `https://api.whatsapp.com/send?phone=+18492151118&text=${message}`,
-      "_blank",
-    );
+    openWhatsApp();
+  });
+}
+
+// Botón de WhatsApp dentro del sticky CTA (desktop)
+const stickyCTAWhatsapp = document.getElementById("stickyCTAWhatsapp");
+if (stickyCTAWhatsapp) {
+  stickyCTAWhatsapp.addEventListener("click", function (e) {
+    e.preventDefault();
+    openWhatsApp();
   });
 }
 
@@ -777,6 +802,17 @@ class SmartFilters {
       }
     });
 
+    // Mostrar / ocultar empty state
+    const visibleCount = Array.from(cards).filter((c) => {
+      const slide = c.closest(".carousel-slide");
+      return slide && slide.style.display !== "none";
+    }).length;
+
+    const emptyState = getOrCreateEmptyState();
+    if (emptyState) {
+      emptyState.style.display = visibleCount === 0 ? "block" : "none";
+    }
+
     // Update carousel after filtering
     if (window.carouselVestidosInstance) {
       window.carouselVestidosInstance.updateCarousel();
@@ -796,6 +832,10 @@ function resetFilters() {
   document.querySelectorAll(".carousel-slide").forEach((slide) => {
     slide.style.display = "block";
   });
+
+  // Ocultar empty state
+  const emptyState = document.getElementById("gallery-empty-state");
+  if (emptyState) emptyState.style.display = "none";
 
   // Reset filter manager
   if (window.smartFilters) {
@@ -1283,6 +1323,7 @@ class CarouselVestidos {
     this.maxIndex = Math.max(0, this.totalSlides - this.slidesPerView);
     this.autoPlayInterval = null;
     this.isTransitioning = false;
+    this.lastVisibleCount = this.totalSlides; // para detectar cambios de filtro
 
     this.init();
   }
@@ -1427,25 +1468,41 @@ class CarouselVestidos {
 
     this.isTransitioning = true;
 
-    // Get visible slides
-    const visibleSlides = this.slides.filter(
-      (slide) => slide.style.display !== "none",
-    );
+    // Lee el gap real del CSS (clamp puede dar un valor distinto al de getGap())
+    const computedGap =
+      parseFloat(window.getComputedStyle(this.track).columnGap) ||
+      parseFloat(window.getComputedStyle(this.track).gap) ||
+      this.getGap();
 
-    if (visibleSlides.length === 0) {
-      this.isTransitioning = false;
-      return;
-    }
+    // Calcula slideWidth a partir del contenedor real, no del offsetWidth del slide
+    const wrapperWidth = this.track.parentElement.offsetWidth;
+    const slideWidth =
+      (wrapperWidth - (this.slidesPerView - 1) * computedGap) /
+      this.slidesPerView;
 
-    // Calculate offset
-    const slideWidth = visibleSlides[0].offsetWidth || 300; // Fallback width
-    const gap = this.getGap();
-    const offset = -(this.currentIndex * (slideWidth + gap));
+    // Aplica ancho exacto a cada slide para evitar desajustes de layout
+    this.slides.forEach((slide) => {
+      slide.style.width    = `${slideWidth}px`;
+      slide.style.minWidth = `${slideWidth}px`;
+      slide.style.flexShrink = "0";
+    });
 
+    const offset = -(this.currentIndex * (slideWidth + computedGap));
     this.track.style.transform = `translateX(${offset}px)`;
     this.updateDots();
 
-    // Reset transition flag after animation
+    // Actualiza maxIndex por si el número de slides visibles cambió
+    const visibleSlides = this.slides.filter(
+      (s) => s.style.display !== "none",
+    );
+    const visibleCount = visibleSlides.length;
+    if (visibleCount !== this.lastVisibleCount) {
+      this.lastVisibleCount = visibleCount;
+      this.maxIndex = Math.max(0, visibleCount - this.slidesPerView);
+      this.currentIndex = Math.min(this.currentIndex, this.maxIndex);
+      this.createDots();
+    }
+
     setTimeout(() => {
       this.isTransitioning = false;
     }, 500);
@@ -1765,6 +1822,13 @@ function initAll() {
   setupActiveNav();
   setupCounters();
 
+  // ── Nuevas mejoras UX ──
+  setupRipple();
+  setupSkeletonLoaders();
+  getOrCreateEmptyState();
+  updateFilterCounts();
+  setupLabelFocus();
+
   console.log("✅ Todas las funcionalidades inicializadas correctamente");
 }
 
@@ -1825,6 +1889,143 @@ function setupCounters() {
 
   counterEls.forEach((el) => counterObserver.observe(el));
 }
+
+// ============================================
+// RIPPLE EFFECT EN BOTONES
+// ============================================
+function setupRipple() {
+  document.querySelectorAll(".btn").forEach((btn) => {
+    btn.addEventListener("click", function (e) {
+      // No aplicar en botones deshabilitados o con loading
+      if (btn.classList.contains("loading") || btn.disabled) return;
+
+      const rect = btn.getBoundingClientRect();
+      const ripple = document.createElement("span");
+      ripple.className = "ripple";
+      ripple.style.left = `${e.clientX - rect.left}px`;
+      ripple.style.top = `${e.clientY - rect.top}px`;
+      btn.appendChild(ripple);
+      ripple.addEventListener("animationend", () => ripple.remove());
+    });
+  });
+}
+
+// ============================================
+// SKELETON LOADER — IMÁGENES DE VESTIDOS
+// ============================================
+function setupSkeletonLoaders() {
+  document.querySelectorAll(".vestido-image img").forEach((img) => {
+    if (img.complete && img.naturalWidth > 0) {
+      img.classList.add("img-loaded");
+      return;
+    }
+    img.classList.add("img-loading");
+    img.addEventListener("load", () => {
+      img.classList.remove("img-loading");
+      img.classList.add("img-loaded");
+    });
+    img.addEventListener("error", () => {
+      img.classList.remove("img-loading");
+    });
+  });
+}
+
+// ============================================
+// EMPTY STATE — GALERÍA SIN RESULTADOS
+// ============================================
+function getOrCreateEmptyState() {
+  let el = document.getElementById("gallery-empty-state");
+  if (!el) {
+    el = document.createElement("div");
+    el.id = "gallery-empty-state";
+    el.className = "gallery-empty-state";
+    el.innerHTML = `
+      <div class="empty-icon">👗</div>
+      <h3>No encontramos vestidos con esos filtros</h3>
+      <p>Prueba con otras opciones o
+        <button onclick="resetFilters()" class="btn-link">limpia los filtros</button>
+      </p>`;
+    const track = document.getElementById("carouselTrack");
+    if (track && track.parentNode) {
+      track.parentNode.insertBefore(el, track.nextSibling);
+    }
+  }
+  return el;
+}
+
+// ============================================
+// FILTER COUNT BADGES
+// ============================================
+function updateFilterCounts() {
+  const cards = Array.from(document.querySelectorAll(".vestido-card"));
+  if (!cards.length) return;
+
+  document.querySelectorAll(".filter-chip").forEach((chip) => {
+    const filterType = chip.dataset.filter;
+
+    chip.querySelectorAll('.chip-dropdown input[type="checkbox"]').forEach((input) => {
+      const value = input.value;
+      let count = 0;
+
+      if (filterType === "precio") {
+        count = cards.filter((c) => {
+          const priceEl = c.querySelector(".vestido-price");
+          if (!priceEl) return false;
+          const price = parseInt(priceEl.textContent.replace(/\D/g, "") || "0");
+          if (value === "0-100")   return price < 100;
+          if (value === "100-150") return price >= 100 && price < 150;
+          if (value === "150-200") return price >= 150 && price < 200;
+          if (value === "200+")    return price >= 200;
+          return false;
+        }).length;
+      } else {
+        count = cards.filter((c) => c.dataset[filterType] === value).length;
+      }
+
+      const label = input.closest("label");
+      if (!label) return;
+
+      let badge = label.querySelector(".filter-count");
+      if (!badge) {
+        badge = document.createElement("span");
+        badge.className = "filter-count";
+        label.appendChild(badge);
+      }
+      badge.textContent = count;
+      badge.style.display = count > 0 ? "inline-flex" : "none";
+    });
+  });
+}
+
+// ============================================
+// LABEL FOCUS — ANIMACIÓN SUAVE
+// ============================================
+function setupLabelFocus() {
+  document.querySelectorAll(".contact-form .form-group").forEach((group) => {
+    const field = group.querySelector("input, select, textarea");
+    if (!field) return;
+
+    const updateState = () => {
+      const hasValue =
+        field.value !== "" && field.value !== field.getAttribute("placeholder");
+      group.classList.toggle("has-value", hasValue);
+    };
+
+    field.addEventListener("focus", () => group.classList.add("has-focus"));
+    field.addEventListener("blur",  () => {
+      group.classList.remove("has-focus");
+      updateState();
+    });
+    field.addEventListener("input", updateState);
+
+    // Revisar estado inicial (ej. autocompletado del navegador)
+    updateState();
+  });
+}
+
+// ============================================
+// INICIALIZACIÓN — AÑADIR NUEVAS LLAMADAS
+// ============================================
 
 // Make functions globally accessible
 window.openQuickView = openQuickView;
