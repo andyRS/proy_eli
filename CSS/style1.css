@@ -19,17 +19,17 @@
     --beige: #E8E3DB;
     --taupe: #C9BDAE;
     --warm-gray: #8B8177;
-    --charcoal: #33362A;
-    --gold: #6B7A45;
-    --sage: #8A9B6E;
-    --terracotta: #4F5C34;
+    --charcoal: #2B2E22;
+    --gold: #445234;
+    --sage: #6E7C52;
+    --terracotta: #B98D4A;
 
     /* Nuevos Colores Premium */
-    --rose-gold: #A9B87F;
-    --champagne: #F0EEDD;
-    --bronze: #3E4A2A;
+    --rose-gold: #D9C39C;
+    --champagne: #F3EEE0;
+    --bronze: #3D3220;
     --ivory: #FFFFF0;
-    --dusty-rose: #9CAC72;
+    --dusty-rose: #C7A873;
     
     /* Colores de Estado */
     --success: #5CB85C;
@@ -157,7 +157,7 @@ a:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
-    box-shadow: 0 0 0 4px rgba(107, 122, 69, 0.3);
+    box-shadow: 0 0 0 4px rgba(68, 82, 52, 0.3);
 }
 
 /* ============================================
@@ -235,7 +235,7 @@ select:focus-visible {
     color: white;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 4px 16px rgba(79, 92, 52, 0.25);
+    box-shadow: 0 4px 16px rgba(185, 141, 74, 0.25);
 }
 
 .btn-primary::before {
@@ -253,7 +253,7 @@ select:focus-visible {
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(79, 92, 52, 0.35);
+    box-shadow: 0 8px 24px rgba(185, 141, 74, 0.35);
 }
 
 .btn-outline {
@@ -350,7 +350,7 @@ select:focus-visible {
     visibility: hidden;
     transition: all var(--transition-base);
     z-index: 998;
-    border: 1px solid rgba(107, 122, 69, 0.2);
+    border: 1px solid rgba(68, 82, 52, 0.2);
     font-size: clamp(16px, 3vw, 20px);
 }
 
@@ -821,8 +821,8 @@ body:has(#stickyCta.visible) .scroll-top {
     width: 60%;
     height: 100%;
     background: 
-        radial-gradient(circle at 80% 20%, rgba(79, 92, 52, 0.08), transparent 50%),
-        radial-gradient(circle at 90% 60%, rgba(107, 122, 69, 0.06), transparent 50%);
+        radial-gradient(circle at 80% 20%, rgba(185, 141, 74, 0.08), transparent 50%),
+        radial-gradient(circle at 90% 60%, rgba(68, 82, 52, 0.06), transparent 50%);
     pointer-events: none;
 }
 
@@ -833,7 +833,7 @@ body:has(#stickyCta.visible) .scroll-top {
     width: 100%;
     height: 100%;
     background-image: 
-        linear-gradient(30deg, transparent 48%, rgba(107, 122, 69, 0.02) 49%, rgba(107, 122, 69, 0.02) 51%, transparent 52%),
+        linear-gradient(30deg, transparent 48%, rgba(68, 82, 52, 0.02) 49%, rgba(68, 82, 52, 0.02) 51%, transparent 52%),
         linear-gradient(60deg, transparent 48%, rgba(167, 174, 158, 0.02) 49%, rgba(167, 174, 158, 0.02) 51%, transparent 52%);
     background-size: 80px 80px;
     opacity: 0.5;
@@ -870,7 +870,7 @@ body:has(#stickyCta.visible) .scroll-top {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: linear-gradient(135deg, rgba(79, 92, 52, 0.12), rgba(107, 122, 69, 0.12));
+    background: linear-gradient(135deg, rgba(185, 141, 74, 0.12), rgba(68, 82, 52, 0.12));
     padding: clamp(6px, 1.5vw, 8px) clamp(12px, 2vw, 16px);
     border-radius: 50px;
     font-size: clamp(10px, 1.8vw, 11px);
@@ -879,7 +879,7 @@ body:has(#stickyCta.visible) .scroll-top {
     color: var(--terracotta);
     font-weight: 600;
     margin-bottom: clamp(20px, 4vw, 28px);
-    border: 1px solid rgba(79, 92, 52, 0.2);
+    border: 1px solid rgba(185, 141, 74, 0.2);
 }
 
 .hero-badge::before {
@@ -1078,7 +1078,7 @@ body:has(#stickyCta.visible) .scroll-top {
     gap: 0;
     justify-content: center;
     margin-bottom: clamp(28px, 5vw, 36px);
-    background: linear-gradient(135deg, rgba(107, 122, 69, 0.08), rgba(79, 92, 52, 0.08));
+    background: linear-gradient(135deg, rgba(68, 82, 52, 0.08), rgba(185, 141, 74, 0.08));
     padding: 6px;
     border-radius: 16px;
     width: fit-content;
@@ -1088,7 +1088,7 @@ body:has(#stickyCta.visible) .scroll-top {
         0 4px 12px rgba(0, 0, 0, 0.08),
         inset 0 1px 0 rgba(255, 255, 255, 0.5);
     position: relative;
-    border: 1px solid rgba(107, 122, 69, 0.2);
+    border: 1px solid rgba(68, 82, 52, 0.2);
 }
 
 /* Indicador de fondo deslizante */
@@ -1274,14 +1274,14 @@ body:has(#stickyCta.visible) .scroll-top {
 
 .extra-option:hover {
     border-color: var(--gold);
-    background: rgba(107, 122, 69, 0.05);
+    background: rgba(68, 82, 52, 0.05);
     transform: translateY(-2px);
     box-shadow: var(--shadow-sm);
 }
 
 .extra-option.selected {
     border-color: var(--gold);
-    background: linear-gradient(135deg, rgba(107, 122, 69, 0.08), rgba(79, 92, 52, 0.08));
+    background: linear-gradient(135deg, rgba(68, 82, 52, 0.08), rgba(185, 141, 74, 0.08));
 }
 
 .extra-option input[type="checkbox"] {
@@ -1396,7 +1396,7 @@ body:has(#stickyCta.visible) .scroll-top {
     border-radius: 12px;
     cursor: pointer;
     transition: all var(--transition-base);
-    box-shadow: 0 6px 20px rgba(107, 122, 69, 0.3);
+    box-shadow: 0 6px 20px rgba(68, 82, 52, 0.3);
     position: relative;
     overflow: hidden;
 }
@@ -1427,14 +1427,14 @@ body:has(#stickyCta.visible) .scroll-top {
 .calculator-form button[type="button"].btn-primary:hover,
 .quote-calculator .btn-primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(107, 122, 69, 0.4);
+    box-shadow: 0 10px 30px rgba(68, 82, 52, 0.4);
 }
 
 .calculator-form .btn-submit:active,
 .calculator-form button[type="button"].btn-primary:active,
 .quote-calculator .btn-primary:active {
     transform: translateY(-1px);
-    box-shadow: 0 5px 15px rgba(107, 122, 69, 0.3);
+    box-shadow: 0 5px 15px rgba(68, 82, 52, 0.3);
 }
 
 /* Añadir icono de flecha al botón si tiene texto específico */
@@ -1485,7 +1485,7 @@ body:has(#stickyCta.visible) .scroll-top {
 
 .filter-chip:hover {
     border-color: var(--gold);
-    background: rgba(107, 122, 69, 0.05);
+    background: rgba(68, 82, 52, 0.05);
 }
 
 .filter-chip svg {
@@ -1611,8 +1611,8 @@ body:has(#stickyCta.visible) .scroll-top {
 .vestido-card:hover {
     transform: translateY(-12px) rotateZ(0.5deg);
     box-shadow: 
-        0 20px 50px rgba(79, 92, 52, 0.25),
-        0 10px 25px rgba(107, 122, 69, 0.15);
+        0 20px 50px rgba(185, 141, 74, 0.25),
+        0 10px 25px rgba(68, 82, 52, 0.15);
 }
 
 .vestido-image {
@@ -1753,7 +1753,7 @@ body:has(#stickyCta.visible) .scroll-top {
     font-size: clamp(11px, 2vw, 12px);
     color: var(--terracotta);
     font-weight: 600;
-    background: rgba(79, 92, 52, 0.1);
+    background: rgba(185, 141, 74, 0.1);
     padding: 4px 10px;
     border-radius: 50px;
     white-space: nowrap;
@@ -2099,7 +2099,7 @@ body:has(#stickyCta.visible) .scroll-top {
     background: linear-gradient(
         90deg,
         transparent,
-        rgba(107, 122, 69, 0.1),
+        rgba(68, 82, 52, 0.1),
         transparent
     );
     transition: left 0.6s ease;
@@ -2132,16 +2132,16 @@ body:has(#stickyCta.visible) .scroll-top {
     border-color: var(--gold);
     transform: translateY(-12px) scale(1.02);
     box-shadow: 
-        0 20px 40px rgba(107, 122, 69, 0.25),
+        0 20px 40px rgba(68, 82, 52, 0.25),
         0 10px 20px rgba(0, 0, 0, 0.12);
 }
 
 /* Efecto de resplandor en el borde */
 .service-card:hover {
     box-shadow: 
-        0 20px 40px rgba(107, 122, 69, 0.25),
+        0 20px 40px rgba(68, 82, 52, 0.25),
         0 10px 20px rgba(0, 0, 0, 0.12),
-        inset 0 0 20px rgba(107, 122, 69, 0.08);
+        inset 0 0 20px rgba(68, 82, 52, 0.08);
 }
 
 .service-icon {
@@ -2264,15 +2264,15 @@ body:has(#stickyCta.visible) .scroll-top {
 @keyframes service-pulse {
     0%, 100% {
         box-shadow: 
-            0 20px 40px rgba(107, 122, 69, 0.25),
+            0 20px 40px rgba(68, 82, 52, 0.25),
             0 10px 20px rgba(0, 0, 0, 0.12),
-            inset 0 0 20px rgba(107, 122, 69, 0.08);
+            inset 0 0 20px rgba(68, 82, 52, 0.08);
     }
     50% {
         box-shadow: 
-            0 25px 50px rgba(107, 122, 69, 0.35),
+            0 25px 50px rgba(68, 82, 52, 0.35),
             0 15px 30px rgba(0, 0, 0, 0.15),
-            inset 0 0 25px rgba(107, 122, 69, 0.12);
+            inset 0 0 25px rgba(68, 82, 52, 0.12);
     }
 }
 
@@ -2545,7 +2545,7 @@ body:has(#stickyCta.visible) .scroll-top {
 .contact-form select:focus,
 .contact-form textarea:focus {
     border-color: var(--gold);
-    box-shadow: 0 0 0 4px rgba(107, 122, 69, 0.1);
+    box-shadow: 0 0 0 4px rgba(68, 82, 52, 0.1);
 }
 
 .contact-form textarea {
@@ -2912,7 +2912,7 @@ footer {
     /* Efectos simplificados para móvil */
     .service-card:active {
         transform: scale(0.98);
-        box-shadow: 0 4px 16px rgba(107, 122, 69, 0.2);
+        box-shadow: 0 4px 16px rgba(68, 82, 52, 0.2);
     }
 
     .service-card::before {
@@ -3387,7 +3387,7 @@ footer {
 
 /* Caja de introducción destacada */
 .legal-intro-box {
-    background: linear-gradient(135deg, rgba(107, 122, 69, 0.08), rgba(79, 92, 52, 0.08));
+    background: linear-gradient(135deg, rgba(68, 82, 52, 0.08), rgba(185, 141, 74, 0.08));
     padding: clamp(24px, 4vw, 36px);
     border-radius: 16px;
     border-left: 4px solid var(--gold);
@@ -3478,7 +3478,7 @@ footer {
 
 .contact-box:hover {
     border-color: var(--gold);
-    box-shadow: 0 6px 24px rgba(107, 122, 69, 0.15);
+    box-shadow: 0 6px 24px rgba(68, 82, 52, 0.15);
 }
 
 .contact-box h3 {
@@ -3511,7 +3511,7 @@ footer {
 .contact-box a {
     color: var(--terracotta);
     text-decoration: underline;
-    text-decoration-color: rgba(79, 92, 52, 0.3);
+    text-decoration-color: rgba(185, 141, 74, 0.3);
     text-underline-offset: 3px;
     transition: all var(--transition-fast);
 }
@@ -3624,7 +3624,7 @@ footer {
 
 /* Destacados dentro del contenido */
 .legal-highlight {
-    background: linear-gradient(135deg, rgba(107, 122, 69, 0.12), rgba(79, 92, 52, 0.12));
+    background: linear-gradient(135deg, rgba(68, 82, 52, 0.12), rgba(185, 141, 74, 0.12));
     padding: clamp(20px, 4vw, 28px);
     border-radius: 12px;
     border-left: 4px solid var(--terracotta);
@@ -3825,13 +3825,13 @@ footer {
     color: white;
     border: none;
     letter-spacing: 0.06em;
-    box-shadow: 0 4px 16px rgba(79, 92, 52, 0.35);
+    box-shadow: 0 4px 16px rgba(185, 141, 74, 0.35);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 24px rgba(79, 92, 52, 0.45);
+    box-shadow: 0 8px 24px rgba(185, 141, 74, 0.45);
     filter: brightness(1.06);
 }
 
@@ -3918,7 +3918,7 @@ footer {
 }
 
 .vestido-card:hover {
-    border-color: rgba(107, 122, 69, 0.3);
+    border-color: rgba(68, 82, 52, 0.3);
 }
 
 /* ============================================
@@ -3973,7 +3973,7 @@ footer {
    ::selection — texto seleccionado con marca
    ============================================ */
 ::selection {
-    background: rgba(107, 122, 69, 0.25);
+    background: rgba(68, 82, 52, 0.25);
     color: var(--charcoal);
 }
 
@@ -4257,7 +4257,7 @@ footer {
     top: 0;
     outline: 3px solid var(--gold);
     outline-offset: 0;
-    box-shadow: 0 4px 16px rgba(107, 122, 69, 0.4);
+    box-shadow: 0 4px 16px rgba(68, 82, 52, 0.4);
 }
 
 /* ============================================
@@ -4509,7 +4509,7 @@ footer {
 .contact-form .form-group select:focus,
 .contact-form .form-group textarea:focus {
     border-color: var(--gold);
-    box-shadow: 0 0 0 3px rgba(107, 122, 69, 0.15);
+    box-shadow: 0 0 0 3px rgba(68, 82, 52, 0.15);
 }
 
 /* Label suave: cambia color al enfocar */
